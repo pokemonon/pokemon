@@ -1,0 +1,28 @@
+{
+    "name": "@pokemon/knife",
+    "version": "1.0.0",
+    "main": "dist/node.js",
+    "module": "dist/esm/node.js",
+    "browser": {
+        "dist/node.js": "./dist/browser.js",
+        "dist/esm/node.js": "./dist/esm/browser.js"
+    },
+    "license": "MIT",
+    "types": "./types/index.d.ts",
+    "scripts": {
+        "build": "rimraf dist && npm run build:node && npm run build:browser",
+        "build:node": "tsup src/node.ts --format esm,cjs --legacy-output",
+        "build:browser": "tsup src/browser.ts --format esm,cjs --legacy-output",
+        "refresh": "ts-node scripts/initEntry.ts",
+        "doc:dev": "vitepress dev doc",
+        "doc": "jsdoc -c jsdoc.json"
+    },
+    "devDependencies": {
+        "better-docs": "^2.3.2",
+        "eslint-plugin-tsdoc": "^0.2.11",
+        "jsdoc": "^3.6.6",
+        "jsdoc-plugin-typescript": "^2.0.6",
+        "rimraf": "^3.0.2",
+        "tsup": "^4.8.21"
+    }
+}
