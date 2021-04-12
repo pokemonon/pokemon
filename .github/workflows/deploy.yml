@@ -8,8 +8,8 @@ jobs:
   build:
     env:
       COMMIT_SECRET: ${{secrets.commit}}
-      USER_NAME: ${{pokemonon}}
-      USER_EMAIL: ${{pokemonon@163.com}}
+      USER_NAME: pokemonon
+      USER_EMAIL: pokemonon@163.com
 
     runs-on: ubuntu-latest
 
