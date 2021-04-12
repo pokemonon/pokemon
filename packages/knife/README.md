@@ -1,5 +1,5 @@
 # knife
-a utility library
+a utility library. check the [doc](https://pokemonon.github.io/pokemon/knife/)
 
 ## Usage
 
