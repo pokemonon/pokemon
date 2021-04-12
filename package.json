@@ -5,10 +5,11 @@
     "license": "MIT",
     "scripts": {
         "ts": "ts-node -r tsconfig-paths/register",
-        "clean": "lerna run clean",
+        "clean": "lerna clean -y && rm -rf node_modules",
         "build": "lerna run build",
         "pub": "lerna publish",
         "new": "ts-node scripts/create.ts",
+        "postinstall": "lerna bootstrap",
         "doc": "lerna exec npm run doc"
     },
     "devDependencies": {
