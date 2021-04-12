@@ -17,7 +17,7 @@
     ],
     "opts": {
         "encoding": "utf8",
-        "destination": "docs/",
+        "destination": "../../assets/knife",
         "recurse": true,
         "verbose": true,
         "template": "node_modules/better-docs"
