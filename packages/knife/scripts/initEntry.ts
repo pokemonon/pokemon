@@ -32,7 +32,7 @@ function genIndex(dirPath: string) {
 ${subDirs.map(i => `export * from './${i}';`).join('\n')}
 `;
     // 主目录入口文件
-    fs.writeFileSync(path.resolve(dirPath, 'index.ts'), dirIndexTpl, { encoding: 'utf8' });
+    fs.writeFileSync(path.resolve(dirPath, `${dirPath.split('/').slice(-1)[0]}.ts`), dirIndexTpl, { encoding: 'utf8' });
 
     // 子目录入口文件
     for (const subDir of subDirs) {

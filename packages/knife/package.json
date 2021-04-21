@@ -1,18 +1,14 @@
 {
     "name": "@pokemon/knife",
     "version": "1.0.0",
-    "main": "dist/node.js",
-    "module": "dist/esm/node.js",
-    "browser": {
-        "dist/node.js": "./dist/browser.js",
-        "dist/esm/node.js": "./dist/esm/browser.js"
-    },
+    "main": "dist/common.js",
+    "module": "dist/esm/common.js",
     "license": "MIT",
-    "types": "./types/index.d.ts",
     "scripts": {
-        "build": "rimraf dist && npm run build:node && npm run build:browser",
-        "build:node": "tsup src/node.ts --format esm,cjs --legacy-output --dts",
-        "build:browser": "tsup src/browser.ts --format esm,cjs --legacy-output --dts",
+        "build": "rimraf dist && npm run build:common && npm run build:node && npm run build:browser",
+        "build:common": "tsup src/common/common.ts --format esm,cjs --legacy-output --dts",
+        "build:node": "tsup src/node/node.ts --format esm,cjs --legacy-output --dts",
+        "build:browser": "tsup src/browser/browser.ts --format esm,cjs --legacy-output --dts",
         "refresh": "ts-node scripts/initEntry.ts",
         "doc:dev": "vitepress dev doc",
         "doc": "jsdoc -c jsdoc.json"
