@@ -31,7 +31,6 @@ function genIndex(dirPath: string) {
     const dirIndexTpl = `/* auto generate! */
 ${subDirs.map(i => `export * from './${i}';`).join('\n')}
 `;
-    console.log(dirIndexTpl);
     // 主目录入口文件
     fs.writeFileSync(path.resolve(dirPath, 'index.ts'), dirIndexTpl, { encoding: 'utf8' });
 

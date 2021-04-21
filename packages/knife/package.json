@@ -11,8 +11,8 @@
     "types": "./types/index.d.ts",
     "scripts": {
         "build": "rimraf dist && npm run build:node && npm run build:browser",
-        "build:node": "tsup src/node.ts --format esm,cjs --legacy-output",
-        "build:browser": "tsup src/browser.ts --format esm,cjs --legacy-output",
+        "build:node": "tsup src/node.ts --format esm,cjs --legacy-output --dts",
+        "build:browser": "tsup src/browser.ts --format esm,cjs --legacy-output --dts",
         "refresh": "ts-node scripts/initEntry.ts",
         "doc:dev": "vitepress dev doc",
         "doc": "jsdoc -c jsdoc.json"
@@ -24,5 +24,8 @@
         "jsdoc-plugin-typescript": "^2.0.6",
         "rimraf": "^3.0.2",
         "tsup": "^4.8.21"
+    },
+    "dependencies": {
+        "typescript": "^4.2.4"
     }
 }
