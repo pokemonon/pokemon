@@ -1,6 +1,6 @@
 {
     "name": "@pokemonon/knife",
-    "version": "1.0.0-beta.2",
+    "version": "1.0.0-beta.0",
     "main": "dist/common.js",
     "module": "dist/esm/common.js",
     "license": "MIT",
@@ -25,5 +25,5 @@
     "dependencies": {
         "typescript": "^4.2.4"
     },
-    "gitHead": "82813fbc68975505625284501020c0f146dad16c"
+    "gitHead": "572aa40503befb349bb255a69dc37cbf130bcbd0"
 }
