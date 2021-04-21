@@ -4,6 +4,7 @@
     "main": "dist/common.js",
     "module": "dist/esm/common.js",
     "license": "MIT",
+    "sideEffects": false,
     "scripts": {
         "build": "rimraf dist && npm run build:common && npm run build:node && npm run build:browser",
         "build:common": "tsup src/common/common.ts --format esm,cjs --legacy-output --dts",
