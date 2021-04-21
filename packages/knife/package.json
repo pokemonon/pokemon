@@ -1,6 +1,6 @@
 {
     "name": "@pokemon/knife",
-    "version": "1.0.0",
+    "version": "1.0.0-beta.0",
     "main": "dist/common.js",
     "module": "dist/esm/common.js",
     "license": "MIT",
