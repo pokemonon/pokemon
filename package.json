@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
     "scripts": {
         "ts": "ts-node -r tsconfig-paths/register",
         "clean": "lerna clean -y && rm -rf node_modules",
