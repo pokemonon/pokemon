@@ -1,5 +1,5 @@
 import { Fn } from 'packages/knife/types/common';
-import once from '../function/once'
+import once from '../function/once';
 
 /**
  * 事件触发器
@@ -15,9 +15,9 @@ class Emitter {
      * @returns 
      */
     on<T extends Fn>(event: string, listener: T) {
-        this.#events[event] = this.#events[event] || []
-        this.#events[event].push(listener)
-        return this
+        this.#events[event] = this.#events[event] || [];
+        this.#events[event].push(listener);
+        return this;
     }
 
     /**
@@ -27,8 +27,8 @@ class Emitter {
      * @returns 
      */
     once<T extends Fn>(event: string, listener: T) {
-        this.on(event, once(listener))
-        return this
+        this.on(event, once(listener));
+        return this;
     }
 
     /**
@@ -38,12 +38,12 @@ class Emitter {
      * @returns 
      */
     emit(event: string, ...args) {
-        const fns = this.#events[event]
+        const fns = this.#events[event];
 
-        if (!fns) return false
+        if (!fns) return false;
 
-        fns.forEach(fn => fn.apply(this, args))
-        return this
+        fns.forEach(fn => fn.apply(this, args));
+        return this;
     }
 
     /**
@@ -53,16 +53,16 @@ class Emitter {
      * @returns 
      */
     off<T extends Fn>(event: string, listener: T) {
-        const fns = this.#events[event]
+        const fns = this.#events[event];
 
-        if (!fns) return false
+        if (!fns) return false;
 
-        const idx = fns.indexOf(listener)
+        const idx = fns.indexOf(listener);
         if (idx > -1) {
-            fns.splice(idx, 1)
+            fns.splice(idx, 1);
         }
 
-        return this
+        return this;
     }
 
     /**
@@ -72,13 +72,13 @@ class Emitter {
      */
     removeAllListeners(event?: string) {
         if (!event) {
-            this.#events = {}
+            this.#events = {};
         } else {
-            delete this.#events[event]
+            delete this.#events[event];
         }
 
-        return this
+        return this;
     }
 }
 
-export default Emitter
+export default Emitter;

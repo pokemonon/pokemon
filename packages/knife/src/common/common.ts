@@ -6,5 +6,3 @@ export * from './object';
 export * from './regexp';
 export * from './string';
 export * from './utils';
-
-console.log('test')

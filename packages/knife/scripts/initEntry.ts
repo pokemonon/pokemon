@@ -17,7 +17,7 @@ function readDir(dirPath: string, isDir = true) {
 
 // 过滤index文件
 function filterIndex(paths: string[]) {
-    return paths.filter(p => !/^index/.test(p));
+    return paths.filter(p => !/^(index|_)/.test(p));
 }
 
 const resolve = (...p: string[]) => path.resolve(__dirname, '..', ...p);
