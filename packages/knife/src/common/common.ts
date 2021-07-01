@@ -1,6 +1,7 @@
 /* auto generate! */
 export * from './array';
 export * from './base';
+export * from './env';
 export * from './function';
 export * from './object';
 export * from './regexp';

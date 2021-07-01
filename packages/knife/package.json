@@ -16,6 +16,7 @@
     "license": "MIT",
     "sideEffects": false,
     "scripts": {
+        "dev": "npm run build:common -- --watch & npm run build:node -- --watch & npm run build:browser -- --watch",
         "build": "yarn refresh && rimraf dist && npm run build:common && npm run build:node && npm run build:browser",
         "build:common": "tsup src/common/common.ts --format esm,cjs --legacy-output --dts",
         "build:node": "tsup src/node/node.ts --format esm,cjs --legacy-output --dts",

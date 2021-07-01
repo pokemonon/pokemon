@@ -1,4 +1,4 @@
-import { Fn } from '../../../types/common'
+import { Fn } from '../../../types/common';
 
 /**
  * 确保函数只执行一次
@@ -6,18 +6,19 @@ import { Fn } from '../../../types/common'
  * @returns {ReturnType<T>}
  */
 const once = <T extends Fn>(fn: T) => {
-    let flag = false
+    let flag = false;
     let result: ReturnType<T>;
     return function() {
         if (!flag) {
-            flag = true
-            result = fn.apply(this, arguments)
+            flag = true;
+            // eslint-disable-next-line
+            result = fn.apply(this, arguments);
         }
-        return result
-    }
-}
+        return result;
+    };
+};
 
-export default once
+export default once;
 
 // function a() {
 //     console.log('exec')
