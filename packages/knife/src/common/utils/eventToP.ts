@@ -57,8 +57,6 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
     emitter.on(RESOLVE_EVENT, (_evt, id, data) => {
         const item = resolves.get(id); 
         if (!item) {
-            // throw new Error('no id exist');
-            // return console.log('%c[iframeComm]%c no id exist', 'background: red; color: white;', '');
             logger.warn('no is exist');
             return;
         }
@@ -96,8 +94,8 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
     };
 
     function emit<T = any>(eventName: string, ...args: any[]): extendedPromise<T>
-    function emit<T = any, U = any>(target: U, eventName: string, ...args: any[]): extendedPromise<T>
-    function emit<T = any, U = any>(target: U, eventName: string, ...args: any[]): extendedPromise<T> {
+    function emit<T = any, U = any>(target: U | U[], eventName: string, ...args: any[]): extendedPromise<T>
+    function emit<T = any, U = any>(target: U | U[], eventName: string, ...args: any[]): extendedPromise<T> {
         if (isString(target)) {
             args.unshift(eventName);
             eventName = target;
