@@ -1,11 +1,18 @@
 /* auto generate! */
+export { default as assign } from './assign';
+export { default as assignIn } from './assignIn';
 export { default as cloneDeep } from './cloneDeep';
+export { default as createAssign } from './createAssign';
+export { default as createAssigner } from './createAssigner';
 export { default as each } from './each';
+export { default as getAllKeys } from './getAllKeys';
 export { default as getDeepProp } from './getDeepProp';
 export { default as getJsonData } from './getJsonData';
+export { default as getKeys } from './getKeys';
 export { default as ifJsonEqual } from './ifJsonEqual';
 export { default as isEmptyObject } from './isEmptyObject';
 export { default as isIterable } from './isIterable';
+export { default as merge } from './merge';
 export { default as omit } from './omit';
 export { default as omitBy } from './omitBy';
 export { default as pick } from './pick';
