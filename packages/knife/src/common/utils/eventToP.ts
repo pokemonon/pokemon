@@ -66,7 +66,7 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
     });
 
     type Resolve = Fn
-    type Listener<T extends any[] = any[]> = (evt: Evt, ...args: [...T, Resolve]) => any
+    type Listener<T extends any[] = any[]> = (evt: Evt, ...args: [...T, Resolve?]) => any
     const on = (eventName: string, listener: Listener) => {
         const callback = (evt: Evt, ...args) => {
             let resolve: Fn = noop;
