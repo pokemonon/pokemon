@@ -5,18 +5,19 @@ import { Fn } from '../../../types/common';
  * @param {T} fn 
  * @returns {ReturnType<T>}
  */
-const once = <T extends Fn>(fn: T) => {
-    let flag = false;
+const once = (<T extends Fn>(fn: T) => {
     let result: ReturnType<T>;
-    return function() {
-        if (!flag) {
-            flag = true;
+    const returnFn = function() {
+        if (!returnFn.flag) {
+            returnFn.flag = true;
             // eslint-disable-next-line
             result = fn.apply(this, arguments);
         }
         return result;
     };
-};
+    returnFn.flag = false;
+    return returnFn;
+});
 
 export default once;
 
