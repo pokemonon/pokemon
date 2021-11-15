@@ -25,6 +25,8 @@ export * from './isEmptyObject';
 export { default as isEmptyObject } from './isEmptyObject';
 export * from './isIterable';
 export { default as isIterable } from './isIterable';
+export * from './jsonClone';
+export { default as jsonClone } from './jsonClone';
 export * from './merge';
 export { default as merge } from './merge';
 export * from './omit';
