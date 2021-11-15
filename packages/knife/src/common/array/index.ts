@@ -11,5 +11,7 @@ export * from './flattenDeep';
 export { default as flattenDeep } from './flattenDeep';
 export * from './isArrLike';
 export { default as isArrLike } from './isArrLike';
+export * from './keyBy';
+export { default as keyBy } from './keyBy';
 export * from './sureArray';
 export { default as sureArray } from './sureArray';
