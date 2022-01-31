@@ -1,7 +1,7 @@
 import isString from '../base/isString';
 import noop from '../function/noop';
 import onceFn from '../function/once';
-import { Fn } from 'packages/knife/types/common';
+import { Fn } from '../../../types/common';
 import Emitter from './Emitter';
 import browserLogger from '../../browser/log/logger';
 import { isArray, isDef } from '../base';
