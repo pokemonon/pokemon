@@ -15,7 +15,7 @@
         "new": "ts-node scripts/create.ts",
         "postinstall": "lerna bootstrap",
         "doc": "lerna exec npm run doc",
-        "dump": "HUSKY=0 lerna version",
+        "bump": "HUSKY=0 lerna version",
         "release": "lerna publish from-git --yes"
     },
     "devDependencies": {
