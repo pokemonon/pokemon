@@ -16,7 +16,7 @@
         "postinstall": "lerna bootstrap",
         "doc": "lerna exec npm run doc",
         "bump": "HUSKY=0 lerna version",
-        "release": "lerna publish from-git --yes"
+        "release": "lerna publish from-package --yes"
     },
     "devDependencies": {
         "@types/ejs": "^3.0.6",
