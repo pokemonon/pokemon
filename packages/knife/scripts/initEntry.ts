@@ -17,7 +17,7 @@ function readDir(dirPath: string, isDir = true) {
 
 // 过滤index文件
 function filterIndex(paths: string[]) {
-    return paths.filter(p => !/^index/.test(p));
+    return paths.filter(p => !/^(index|_)/.test(p));
 }
 
 const resolve = (...p: string[]) => path.resolve(__dirname, '..', ...p);
@@ -31,9 +31,8 @@ function genIndex(dirPath: string) {
     const dirIndexTpl = `/* auto generate! */
 ${subDirs.map(i => `export * from './${i}';`).join('\n')}
 `;
-    console.log(dirIndexTpl);
     // 主目录入口文件
-    fs.writeFileSync(path.resolve(dirPath, 'index.ts'), dirIndexTpl, { encoding: 'utf8' });
+    fs.writeFileSync(path.resolve(dirPath, `${dirPath.split('/').slice(-1)[0]}.ts`), dirIndexTpl, { encoding: 'utf8' });
 
     // 子目录入口文件
     for (const subDir of subDirs) {
@@ -41,7 +40,7 @@ ${subDirs.map(i => `export * from './${i}';`).join('\n')}
         const subDirIndexTpl = `/* auto generate! */
 ${subFiles.map(i => {
         const name = i.split('.')[0];
-        return `export { default as ${name} } from './${name}';`;
+        return `export * from './${name}';\n` + `export { default as ${name} } from './${name}';`;
     }).join('\n')}
 `;
         fs.writeFileSync(path.resolve(dirPath, subDir, 'index.ts'), subDirIndexTpl, { encoding: 'utf8' });

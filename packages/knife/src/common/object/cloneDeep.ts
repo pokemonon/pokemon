@@ -1,4 +1,5 @@
 import each from './each';
+import isArray from '../base/isArray';
 
 /**
  * todo 不同类型及深度拷贝
@@ -7,18 +8,18 @@ import each from './each';
  * @param target 
  * @returns {T}
  */
-const cloneDeep = <T>(target: T) => {
+const cloneDeep = <T>(target: T): T => {
     if (typeof target !== 'object') {
         return target;
     }
-    if (Array.isArray(target)) {
-        const arr: any[] = [];
+    if (isArray(target)) {
+        const arr = [] as any;
         for (let i = 0; i < target.length; i++) {
             arr[i] = cloneDeep(target[i]);
         }
         return arr;
     }
-    const obj = {};
+    const obj = {} as T;
     each(target, (v, k) => {
         obj[k] = cloneDeep(v);
     });

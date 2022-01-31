@@ -1,28 +1,46 @@
 {
-    "name": "@pokemon/knife",
-    "version": "1.0.0",
-    "main": "dist/node.js",
-    "module": "dist/esm/node.js",
-    "browser": {
-        "dist/node.js": "./dist/browser.js",
-        "dist/esm/node.js": "./dist/esm/browser.js"
+    "name": "@pokemonon/knife",
+    "version": "1.0.0-beta.11",
+    "main": "dist/common.js",
+    "module": "dist/esm/common.js",
+    "exports": {
+        ".": {
+            "require": "./dist/common.js",
+            "import": "./dist/esm/common.js"
+        },
+        "./": {
+            "require": "./dist/",
+            "import": "./dist/esm/"
+        }
     },
     "license": "MIT",
-    "types": "./types/index.d.ts",
+    "sideEffects": false,
     "scripts": {
-        "build": "rimraf dist && npm run build:node && npm run build:browser",
-        "build:node": "tsup src/node.ts --format esm,cjs --legacy-output",
-        "build:browser": "tsup src/browser.ts --format esm,cjs --legacy-output",
+        "dev": "npm run build:common -- --watch & npm run build:node -- --watch & npm run build:browser -- --watch",
+        "build": "yarn refresh && rimraf dist && npm run build:common && npm run build:node && npm run build:browser",
+        "build:common": "tsup src/common/common.ts --format esm,cjs --legacy-output --dts",
+        "build:node": "tsup src/node/node.ts --format esm,cjs --legacy-output --dts",
+        "build:browser": "tsup src/browser/browser.ts --format esm,cjs --legacy-output --dts",
         "refresh": "ts-node scripts/initEntry.ts",
         "doc:dev": "vitepress dev doc",
         "doc": "jsdoc -c jsdoc.json"
     },
     "devDependencies": {
+        "@types/listr": "^0.14.3",
         "better-docs": "^2.3.2",
         "eslint-plugin-tsdoc": "^0.2.11",
         "jsdoc": "^3.6.6",
         "jsdoc-plugin-typescript": "^2.0.6",
         "rimraf": "^3.0.2",
         "tsup": "^4.8.21"
-    }
+    },
+    "dependencies": {
+        "chalk": "^4.1.1",
+        "execa": "^5.0.0",
+        "fs-extra": "^10.0.0",
+        "listr": "^0.14.3",
+        "strip-ansi": "^6.0.0",
+        "typescript": "^4.2.4"
+    },
+    "gitHead": "f18dd668b20870ecd547f307526adc2e1272b9f1"
 }
