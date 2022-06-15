@@ -1,9 +1,10 @@
 import createAssigner from './createAssigner';
 import baseMerge from '../internal/baseMerge';
 import getKeys from './getKeys';
+import isArray from '../base/isArray';
 
 /**
- * 遍历对象的值
+ * 遍历对象的值, 数组会被合并
  * @category Object
  * @param object
  * @param source1
@@ -11,9 +12,13 @@ import getKeys from './getKeys';
  * @param ...
  * @param customizer
  */
-const merge = createAssigner(baseMerge(getKeys));
+const mergeArr = createAssigner(baseMerge(getKeys, (v1, v2) => {
+    if (isArray(v1) && isArray(v2)) {
+        return [...v1, ...v2];
+    }
+}));
 
-export default merge;
+export default mergeArr;
 
 // const obj = {
 //     info: {
@@ -32,6 +37,6 @@ export default merge;
 //         1
 //     ]
 // };
-// merge(obj, src1, src2);
+// mergeArr(obj, src1, src2);
 
 // console.log(obj);

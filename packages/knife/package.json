@@ -4,13 +4,23 @@
     "main": "dist/common.js",
     "module": "dist/esm/common.js",
     "exports": {
-        ".": {
-            "require": "./dist/common.js",
-            "import": "./dist/esm/common.js"
+        "node": {
+            "require": "./dist/node.js",
+            "import": "./dist/esm/node.js"
         },
-        "./": {
-            "require": "./dist/",
-            "import": "./dist/esm/"
+        "browser": {
+            "require": "./dist/browser.js",
+            "import": "./dist/esm/browser.js"
+        }
+    },
+    "typesVersions": {
+        "*": {
+            "browser": [
+                "./dist/browser.d.ts"
+            ],
+            "node": [
+                "./dist/node.d.ts"
+            ]
         }
     },
     "license": "MIT",

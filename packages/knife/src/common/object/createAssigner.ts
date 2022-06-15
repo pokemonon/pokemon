@@ -7,13 +7,13 @@ import isDef from '../base/isDef';
  * todo 不同类型及深度拷贝
  * 避免引用,使用的对象复制
  * @category Object
- * @param target 
+ * @param assinger 赋值函数，回调参数 合并目标 合并源 合并自定义函数
  * @returns {T}
  */
 type Customizer = (objVal?, srcVal?, key?, obj?, src?) => boolean
 type Assigner = (obj, src, customizer: Customizer) => any
 
-const createAssign = <T extends Fn<any[], string[]>>(assigner: Assigner) => {
+const createAssigner = <T extends Fn<any[], string[]>>(assigner: Assigner) => {
     // const defaultCustomizer: Customizer = (_objVal, srcVal) => isDef(srcVal);
     
     // todo 类型
@@ -36,4 +36,4 @@ const createAssign = <T extends Fn<any[], string[]>>(assigner: Assigner) => {
     return assign;
 };
 
-export default createAssign;
+export default createAssigner;
