@@ -29,6 +29,8 @@ export * from './jsonClone';
 export { default as jsonClone } from './jsonClone';
 export * from './merge';
 export { default as merge } from './merge';
+export * from './mergeArr';
+export { default as mergeArr } from './mergeArr';
 export * from './omit';
 export { default as omit } from './omit';
 export * from './omitBy';
