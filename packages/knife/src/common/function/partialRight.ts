@@ -1,12 +1,12 @@
 import { Fn } from '../../../types/common';
-import curryRight, { RemainingParameters, PlaceholderArr, PartialArr } from './curryRight';
+import curryRight, { CurryRightRemainingParameters, CurryRightPlaceholderArr, CurryRightPartialArr } from './curryRight';
 import FN_PLACEHOLDER, { isFnPlaceholder } from '../const/FN_PLACEHOLDER';
 import filter from '../array/filter';
 
 // todo 类型
 type PartialRight = {
-    <F extends Fn, Params extends Parameters<F>, R = ReturnType<Fn>, A extends any[] = PlaceholderArr<PartialArr<RemainingParameters<Params, []>>>>(fn: F, ...args: A): Fn<RemainingParameters<Params, A>, R>
-    <Params extends any[], R = any, A extends any[] = PlaceholderArr<PartialArr<RemainingParameters<Params, []>>>>(fn, ...args: A): Fn<RemainingParameters<Params, A>, R>
+    <F extends Fn, Params extends Parameters<F>, R = ReturnType<Fn>, A extends any[] = CurryRightPlaceholderArr<CurryRightPartialArr<CurryRightRemainingParameters<Params, []>>>>(fn: F, ...args: A): Fn<CurryRightRemainingParameters<Params, A>, R>
+    <Params extends any[], R = any, A extends any[] = CurryRightPlaceholderArr<CurryRightPartialArr<CurryRightRemainingParameters<Params, []>>>>(fn, ...args: A): Fn<CurryRightRemainingParameters<Params, A>, R>
     placeholder: FN_PLACEHOLDER
 }
 

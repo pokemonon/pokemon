@@ -6,8 +6,8 @@ import { Fn } from '../../../types/common';
  * @param T 参数数组
  */
 // eslint-disable-next-line
-export type PartialArr<T> = T extends [...infer As, infer A] ?
-    T | PartialArr<As> :
+export type CurryPartialArr<T> = T extends [...infer As, infer A] ?
+    T | CurryPartialArr<As> :
     [];
 
 /**
@@ -16,10 +16,10 @@ export type PartialArr<T> = T extends [...infer As, infer A] ?
  * @param P 占位符
  */
 // eslint-disable-next-line
-export type PlaceholderArr<T, P = FN_PLACEHOLDER> = T extends [infer A1] ?
+export type CurryPlaceholderArr<T, P = FN_PLACEHOLDER> = T extends [infer A1] ?
     T : // 最后一位不能是占位符
     T extends [infer A1, ...infer As] ?
-        [A1, ...PlaceholderArr<As, P>] | [P, ...PlaceholderArr<As, P>] :
+        [A1, ...CurryPlaceholderArr<As, P>] | [P, ...CurryPlaceholderArr<As, P>] :
         [];
 
 /**
@@ -27,25 +27,25 @@ export type PlaceholderArr<T, P = FN_PLACEHOLDER> = T extends [infer A1] ?
  * @param Expected 需要的参数
  * @param Provided 已经传递的参数 
  */
-export type RemainingParameters<Expected extends any[], Provided extends any[], P = FN_PLACEHOLDER> =
+export type CurryRemainingParameters<Expected extends any[], Provided extends any[], P = FN_PLACEHOLDER> =
     Expected extends [infer E1, ...infer EX] ?
         Provided extends [infer P1, ...infer PX] ?
             P1 extends FN_PLACEHOLDER ?
-                [E1, ...RemainingParameters<EX, PX, P>] :
-                RemainingParameters<EX, PX, P> :
+                [E1, ...CurryRemainingParameters<EX, PX, P>] :
+                CurryRemainingParameters<EX, PX, P> :
             Expected :
         [];
 
-export type CurriedPlaceholderArgs<T> = PlaceholderArr<PartialArr<T>>
-export type CurriedFunction<Expected extends any[], Provided extends any[], R = any> =
+export type CurryCurriedPlaceholderArgs<T> = CurryPlaceholderArr<CurryPartialArr<T>>
+export type CurryCurriedFunction<Expected extends any[], Provided extends any[], R = any> =
     <
-        Exp extends RemainingParameters<Expected, Provided>,
-        T extends CurriedPlaceholderArgs<Exp>,
+        Exp extends CurryRemainingParameters<Expected, Provided>,
+        T extends CurryCurriedPlaceholderArgs<Exp>,
     >(...args: T) =>
-    T extends Exp ? R : CurriedFunction<Exp, T, R>
+    T extends Exp ? R : CurryCurriedFunction<Exp, T, R>
 export interface Curry {
-    <F extends Fn>(fn: F): CurriedFunction<Parameters<F>, [], ReturnType<F>>;
-    <Params extends any[], F extends Fn = Fn>(fn: F, arity: number): CurriedFunction<Params, [], ReturnType<F>>;
+    <F extends Fn>(fn: F): CurryCurriedFunction<Parameters<F>, [], ReturnType<F>>;
+    <Params extends any[], F extends Fn = Fn>(fn: F, arity: number): CurryCurriedFunction<Params, [], ReturnType<F>>;
     placeholder: FN_PLACEHOLDER;
 }
 

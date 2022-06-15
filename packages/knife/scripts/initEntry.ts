@@ -40,7 +40,7 @@ ${subDirs.map(i => `export * from './${i}';`).join('\n')}
         const subDirIndexTpl = `/* auto generate! */
 ${subFiles.map(i => {
         const name = i.split('.')[0];
-        return `export { default as ${name} } from './${name}';`;
+        return `export * from './${name}';\n` + `export { default as ${name} } from './${name}';`;
     }).join('\n')}
 `;
         fs.writeFileSync(path.resolve(dirPath, subDir, 'index.ts'), subDirIndexTpl, { encoding: 'utf8' });

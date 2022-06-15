@@ -1,4 +1,4 @@
-import { Fn } from 'packages/knife/types/common';
+import { Fn } from '../../../types/common';
 
 const defaultResolver = (...args) => args[0];
 const memoize = <T extends Fn>(fn: T, resolver = defaultResolver) => {

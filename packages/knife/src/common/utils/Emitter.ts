@@ -1,4 +1,4 @@
-import { Fn } from 'packages/knife/types/common';
+import { Fn } from '../../../types/common';
 import once from '../function/once';
 
 /**

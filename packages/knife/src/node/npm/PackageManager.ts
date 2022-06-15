@@ -4,7 +4,7 @@ import hasPnpm from '../env/hasPnpm';
 import hasProjectYarn from '../env/hasProjectYarn';
 import hasProjectPnpm from '../env/hasProjectPnpm';
 import hasProjectNpm from '../env/hasProjectNpm';
-import { ItemOrArray } from 'packages/knife/types/common';
+import { ItemOrArray } from '../../../types/common';
 import sureArray from '../../common/array/sureArray';
 
 const PACKAGE_MANAGER_CONFIG = {

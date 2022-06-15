@@ -16,12 +16,12 @@ const createAssign = <T extends Fn<any[], string[]>>(getKeys: T) => {
     const defaultCustomizer: Customizer = (_objVal, srcVal) => isDef(srcVal);
     
     // todo 类型
-    // function assign<S extends [...Object[], Customizer]>(obj, ...sources: S)
     function assign<T, S1>(obj: T, src1: S1, customizer?: Customizer): T & S1
     function assign<T, S1, S2>(obj: T, src1: S1, src2: S2, customizer?: Customizer): T & S1 & S2
     function assign<T, S1, S2, S3>(obj: T, src1: S1, src2: S2, src3: S3, customizer?: Customizer): T & S1 & S2 & S3
     function assign<T, S1, S2, S3, S4>(obj: T, src1: S1, src2: S2, src3: S3, src4: S4, customizer?: Customizer): T & S1 & S2 & S3 & S4
     function assign<T, S1, S2, S3, S4, S5>(obj: T, src1: S1, src2: S2, src3: S3, src4: S4, src5: S5, customizer?: Customizer): T & S1 & S2 & S3 & S4 & S5
+    function assign(...args): any
     function assign(obj, ...sources) {
         let customizer = defaultCustomizer;
         if (isFunction(sources.slice(-1)[0])) {

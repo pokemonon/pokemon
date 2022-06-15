@@ -57,7 +57,9 @@ class Spinner {
     }
 
     start() {
-        listr.run().catch(() => {});
+        listr.run().catch(() => {
+            //
+        });
     }
 
     success() {

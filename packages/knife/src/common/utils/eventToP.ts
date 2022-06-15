@@ -1,10 +1,10 @@
 import isString from '../base/isString';
 import noop from '../function/noop';
 import onceFn from '../function/once';
-import { Fn } from 'packages/knife/types/common';
+import { Fn } from '../../../types/common';
 import Emitter from './Emitter';
 import browserLogger from '../../browser/log/logger';
-import { isArray } from '../base';
+import { isArray, isDef } from '../base';
 
 const ID_PREFIX = 'POKEMON_EVENTTOP_ID';
 let count = 0;
@@ -66,7 +66,7 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
     });
 
     type Resolve = Fn
-    type Listener<T extends any[] = any[]> = (evt: Evt, ...args: [...T, Resolve]) => any
+    type Listener<T extends any[] = any[]> = (evt: Evt, ...args: [...T, Resolve?]) => any
     const on = (eventName: string, listener: Listener) => {
         const callback = (evt: Evt, ...args) => {
             let resolve: Fn = noop;
@@ -97,7 +97,7 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
     function emit<T = any, U = any>(target: U | U[], eventName: string, ...args: any[]): extendedPromise<T>
     function emit<T = any, U = any>(target: U | U[], eventName: string, ...args: any[]): extendedPromise<T> {
         if (isString(target)) {
-            args.unshift(eventName);
+            isDef(eventName) && args.unshift(eventName);
             eventName = target;
             target = null;
         }

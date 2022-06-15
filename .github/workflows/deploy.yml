@@ -1,0 +1,44 @@
+name: deploy docs
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    env:
+      COMMIT_SECRET: ${{secrets.commit}}
+      USER_NAME: pokemonon
+      USER_EMAIL: pokemonon@163.com
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+    
+      - uses: actions/setup-node@v2.1.5
+        with:
+          node-version: 14.x
+          
+      - uses: CultureHQ/actions-yarn@v1.0.1
+      
+      - name: install deps
+        run: yarn
+        
+      - name: build docs
+        run: yarn doc
+        
+      - name: deploy docs to gh-pages
+        run: |
+          cd assets
+          git init
+          git config --local user.name $USER_NAME
+          git config --local user.email $USER_EMAIL
+          git remote add origin https://$COMMIT_SECRET@github.com/$GITHUB_REPOSITORY.git
+          git checkout -b gh-pages
+          git add .
+          git commit -m "feat: deploy doc"
+          git push origin gh-pages -f
+          echo 🚀
+      
+    
