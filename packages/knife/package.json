@@ -4,11 +4,11 @@
     "main": "dist/common.js",
     "module": "dist/esm/common.js",
     "exports": {
-        "node": {
+        "./node": {
             "require": "./dist/node.js",
             "import": "./dist/esm/node.js"
         },
-        "browser": {
+        "./browser": {
             "require": "./dist/browser.js",
             "import": "./dist/esm/browser.js"
         }
