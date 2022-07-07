@@ -14,7 +14,7 @@
         },
         ".": {
             "require": "./dist/common.js",
-            "module": "./dist/esm/common.js"
+            "import": "./dist/esm/common.js"
         }
     },
     "typesVersions": {
