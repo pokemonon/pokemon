@@ -1,7 +1,13 @@
-const UPPERCASE = /[\p{Lu}]/u;
-const LOWERCASE = /[\p{Ll}]/u;
-const LEADING_CAPITAL = /^[\p{Lu}](?![\p{Lu}])/gu;
-const IDENTIFIER = /([\p{Alpha}\p{N}_]|$)/u;
+// const UPPERCASE = /[\p{Lu}]/u;
+// const LOWERCASE = /[\p{Ll}]/u;
+// const LEADING_CAPITAL = /^[\p{Lu}](?![\p{Lu}])/gu;
+// const IDENTIFIER = /([\p{Alpha}\p{N}_]|$)/u;
+// const SEPARATORS = /[_.\- ]+/;
+
+const UPPERCASE = /[A-Z]/;
+const LOWERCASE = /[a-z]/;
+const LEADING_CAPITAL = /^[A-Z](?![a-z])/;
+const IDENTIFIER = /([a-zA-Z0-9_]|$)/;
 const SEPARATORS = /[_.\- ]+/;
 
 const LEADING_SEPARATORS = new RegExp('^' + SEPARATORS.source);
