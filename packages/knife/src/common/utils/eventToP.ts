@@ -47,45 +47,65 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
         logger = browserLogger
     } = opts;
 
+    /**
+     * emit发送后的回调事件
+     */
     const RESOLVE_EVENT = 'RESOLVE_EVENT';
+
     const emitter = new Emitter();
     const resolves = new Map();
 
     // let currentEvt;
 
-    // 监听完成事件
-    emitter.on(RESOLVE_EVENT, (_evt, id, data) => {
+    /**
+     * emit调用后，监听通信另一端on的回调事件
+     */
+    type ResolveEventType = 'resolve' | 'reject'
+    emitter.on(RESOLVE_EVENT, (_evt, id, type: ResolveEventType, data) => {
         const item = resolves.get(id); 
         if (!item) {
             logger.warn('no is exist');
             return;
         }
         resolves.delete(id);
-        const { resolve } = item;
-        resolve(data);
+
+        const { resolve, reject } = item;
+        if (type === 'reject') {
+            reject(data);
+        } else {
+            resolve(data);
+        }
     });
+
 
     type Resolve = Fn
     type Listener<T extends any[] = any[]> = (evt: Evt, ...args: [...T, Resolve?]) => any
     const on = (eventName: string, listener: Listener) => {
         const callback = (evt: Evt, ...args) => {
             let resolve: Fn = noop;
+            let reject: Fn = noop;
             const firstArg = args[0];
             if (checkIfId(firstArg)) {
                 // 取出id
-                args.shift(); 
-                resolve = (data) => {
-                    const info = {
-                        // emitTarget
-                        eventName: RESOLVE_EVENT,
-                        data: [firstArg, data],
-                        evt
+                args.shift();
+
+                const createCallback = (type: ResolveEventType) => {
+                    return (data) => {
+                        const info = {
+                            // emitTarget
+                            eventName: RESOLVE_EVENT,
+                            data: [firstArg, type, data],
+                            evt
+                        };
+                        emitAdapter(info);
                     };
-                    emitAdapter(info);
                 };
+
+                resolve = createCallback('resolve');
+                reject = createCallback('reject');
             }
 
-            listener(evt, ...args, resolve);
+            listener(evt, ...args, resolve, reject);
         };
         emitter.on(eventName, callback);
         return () => {
@@ -104,6 +124,7 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
 
         function send(target: U, args: any) {
             return new Promise((resolve, reject) => {
+                // 每个emit对应一个id，通过id触发resolve
                 const id = genId();
                 // 每次完成触发一次every的回调
                 const res = (data) => {
