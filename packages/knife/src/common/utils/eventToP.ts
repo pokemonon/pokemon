@@ -61,7 +61,7 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
      * emit调用后，监听通信另一端on的回调事件
      */
     type ResolveEventType = 'resolve' | 'reject'
-    emitter.on(RESOLVE_EVENT, (_evt, id, type: ResolveEventType, data) => {
+    emitter.on(RESOLVE_EVENT, (_evt, id, data, type: ResolveEventType) => {
         const item = resolves.get(id); 
         if (!item) {
             logger.warn('no is exist');
@@ -94,7 +94,7 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
                         const info = {
                             // emitTarget
                             eventName: RESOLVE_EVENT,
-                            data: [firstArg, type, data],
+                            data: [firstArg, data, type],
                             evt
                         };
                         emitAdapter(info);
