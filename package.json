@@ -13,10 +13,9 @@
         "build": "lerna run build",
         "pub": "lerna publish",
         "new": "ts-node scripts/create.ts",
-        "postinstall": "lerna bootstrap",
         "doc": "lerna exec npm run doc",
-        "bump": "HUSKY=0 lerna version",
-        "release": "lerna publish from-package --yes"
+        "bump": "HUSKY=0 changeset && changeset version",
+        "release": "npm run build && changeset publish"
     },
     "devDependencies": {
         "@types/ejs": "^3.0.6",
@@ -24,7 +23,6 @@
         "@typescript-eslint/eslint-plugin": "^4.11.1",
         "@typescript-eslint/parser": "^4.11.1",
         "eslint": "^7.17.0",
-        "lerna": "^3.22.1",
         "ts-node": "^9.1.1",
         "tsconfig-paths": "^3.9.0",
         "tsup": "^4.8.21",
@@ -32,7 +30,8 @@
         "commitizen": "^4.2.4",
         "cz-conventional-changelog": "^3.3.0",
         "husky": "^6.0.0",
-        "standard-version": "^9.3.0"
+        "standard-version": "^9.3.0",
+        "@changesets/cli": "^2.23.0"
     },
     "dependencies": {
         "ejs": "^3.1.6",
