@@ -1,4 +1,4 @@
-import isString from '../base/isString';
+import { isString } from '../base/isString';
 
 /**
  * 判断对象是否是（类）数组
@@ -6,9 +6,9 @@ import isString from '../base/isString';
  * @param o 
  * @returns {boolean} 
  */
-function keyBy<T extends any[], K extends keyof T[number], V extends T[number]>(o: T, k: K): Record<V[K], V>;
-function keyBy<T extends any[], V extends T[number]>(o: T, iter: (v: V) => any): Record<any, V>
-function keyBy<T extends any[], K extends keyof T[number], V extends T[number]>(o: T, k: K | ((v: V) => any)) {
+export function keyBy<T extends any[], K extends keyof T[number], V extends T[number]>(o: T, k: K): Record<V[K], V>;
+export function keyBy<T extends any[], V extends T[number]>(o: T, iter: (v: V) => any): Record<any, V>
+export function keyBy<T extends any[], K extends keyof T[number], V extends T[number]>(o: T, k: K | ((v: V) => any)) {
     const iter: any = isString(k) ? (v: V) => v[k] : k;
     return o.reduce((res, item) => {
         res[iter(item)] = item;
@@ -16,7 +16,7 @@ function keyBy<T extends any[], K extends keyof T[number], V extends T[number]>(
     }, {});
 }
 
-export default keyBy;
+
 
 
 // const arr = [

@@ -20,8 +20,8 @@
 
 
 // todo
-const prevetBack = () => {
+export const prevetBack = () => {
     //
 };
 
-export default prevetBack;
+export prevetBack;

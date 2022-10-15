@@ -1,5 +1,5 @@
-import isObj from '../base/isObj';
-import each from '../object/each';
+import { isObj } from '../base/isObj';
+import { each } from '../object/each';
 
 const assignMergeValue = (obj, k, v) => {
     if (v === undefined && !(k in obj) || v !== undefined) {
@@ -7,11 +7,11 @@ const assignMergeValue = (obj, k, v) => {
     }
 };
 
-const dc = (objVal?, srcVal?, key?, obj?, src?) => {
+const dc: any = (objVal?, srcVal?, key?, obj?, src?) => {
     return undefined;
 };
 
-const baseMerge = (getKeys, defaultCustomizer = dc) => function baseMergeDeep(obj, src, customizer = defaultCustomizer, map = new Map()) {
+export const baseMerge = (getKeys, defaultCustomizer = dc) => function baseMergeDeep(obj, src, customizer = defaultCustomizer, map = new Map()) {
     // if (!isObj(obj) || !isObj(src)) return;
     // if (map[src]) return;
     const keys = getKeys(src);
@@ -39,4 +39,4 @@ const baseMerge = (getKeys, defaultCustomizer = dc) => function baseMergeDeep(ob
     });
 };
 
-export default baseMerge;
+

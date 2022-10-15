@@ -1,6 +1,6 @@
-import createAssigner from './createAssigner';
-import baseMerge from '../internal/baseMerge';
-import getKeys from './getKeys';
+import { createAssigner } from './createAssigner';
+import { baseMerge } from '../internal/baseMerge';
+import { getKeys } from './getKeys';
 
 /**
  * 遍历对象的值
@@ -11,9 +11,7 @@ import getKeys from './getKeys';
  * @param ...
  * @param customizer
  */
-const merge = createAssigner(baseMerge(getKeys));
-
-export default merge;
+export const merge = createAssigner(baseMerge(getKeys) as any);
 
 // const obj = {
 //     info: {

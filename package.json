@@ -18,20 +18,25 @@
         "release": "npm run build && changeset publish"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.23.0",
+        "@packbag/cli": "0.0.1-alpha.3",
+        "@packbag/cli-rollup": "0.0.1-alpha.3",
+        "@packbag/cli-rollup-plugin-common": "0.0.1-alpha.3",
         "@types/ejs": "^3.0.6",
         "@types/fs-extra": "^9.0.9",
         "@typescript-eslint/eslint-plugin": "^4.11.1",
         "@typescript-eslint/parser": "^4.11.1",
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "^3.3.0",
         "eslint": "^7.17.0",
+        "husky": "^6.0.0",
+        "standard-version": "^9.3.0",
         "ts-node": "^9.1.1",
         "tsconfig-paths": "^3.9.0",
         "tsup": "^4.8.21",
-        "typescript": "^4.3.2",
-        "commitizen": "^4.2.4",
-        "cz-conventional-changelog": "^3.3.0",
-        "husky": "^6.0.0",
-        "standard-version": "^9.3.0",
-        "@changesets/cli": "^2.23.0"
+        "typescript": "~4.7.4",
+        "vitepress": "1.0.0-alpha.20",
+        "vue": "^3.2.41"
     },
     "dependencies": {
         "ejs": "^3.1.6",

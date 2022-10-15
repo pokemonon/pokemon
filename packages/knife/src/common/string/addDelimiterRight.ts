@@ -1,4 +1,7 @@
-import addDelimiter, { AddDelimiterOptions } from './addDelimiter';
+import {
+    addDelimiter,
+    AddDelimiterOptions 
+} from './addDelimiter';
 
 /**
  * 从右边开始添加分隔符
@@ -7,9 +10,8 @@ import addDelimiter, { AddDelimiterOptions } from './addDelimiter';
  * @param options 
  * @returns {string} 
  */
-const addDelimiterRight = (value = '', options: Omit<AddDelimiterOptions, 'fromRight'>) => addDelimiter(value, {
+export const addDelimiterRight = (value = '', options: Omit<AddDelimiterOptions, 'fromRight'>) => addDelimiter(value, {
     ...options,
     fromRight: true
 });
 
-export default addDelimiterRight;

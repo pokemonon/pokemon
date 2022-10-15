@@ -1,11 +1,11 @@
 import execa from 'execa';
-import hasYarn from '../env/hasYarn';
-import hasPnpm from '../env/hasPnpm';
-import hasProjectYarn from '../env/hasProjectYarn';
-import hasProjectPnpm from '../env/hasProjectPnpm';
-import hasProjectNpm from '../env/hasProjectNpm';
-import { ItemOrArray } from '../../../types/common';
-import sureArray from '../../common/array/sureArray';
+import { hasYarn } from '../env/hasYarn';
+import { hasPnpm } from '../env/hasPnpm';
+import { hasProjectYarn } from '../env/hasProjectYarn';
+import { hasProjectPnpm } from '../env/hasProjectPnpm';
+import { hasProjectNpm } from '../env/hasProjectNpm';
+import { ItemOrArray } from '../../types';
+import { sureArray } from '../../common/array/sureArray';
 
 const PACKAGE_MANAGER_CONFIG = {
     yarn: {
@@ -38,9 +38,9 @@ interface PackageManagerConfig {
     context?: string;
     forcePackageManager?: PackageManagerEnum
 }
-class PackageManager {
-    bin: PackageManagerEnum
-    context: string
+export class PackageManager {
+    bin!: PackageManagerEnum
+    context!: string
 
     constructor(config: PackageManagerConfig) {
         const {
@@ -66,7 +66,7 @@ class PackageManager {
         }
     }
 
-    async runCommand(command: PackageManagerCommand, args = []) {
+    async runCommand(command: PackageManagerCommand, args: any[] = []) {
         return execa(this.bin, [
             ...PACKAGE_MANAGER_CONFIG[this.bin][command],
             ...args
@@ -100,4 +100,3 @@ class PackageManager {
     }
 }
 
-export default PackageManager;

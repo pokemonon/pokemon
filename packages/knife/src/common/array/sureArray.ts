@@ -1,6 +1,6 @@
-import { ItemOrArray } from '../../../types/common';
-import isArray from '../base/isArray';
+import { ItemOrArray } from '../../types';
+import { isArray } from '../base/isArray';
 
-const sureArray = <T>(v: ItemOrArray<T>) => isArray(v) ? v : [v];
+export const sureArray = <T>(v: ItemOrArray<T>) => isArray(v) ? v : [v];
 
-export default sureArray;
+

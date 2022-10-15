@@ -1,7 +1,7 @@
-import { Fn } from '../../../types/common';
-import curry, { CurryRemainingParameters, CurryPlaceholderArr, CurryPartialArr } from './curry';
-import FN_PLACEHOLDER, { isFnPlaceholder } from '../const/FN_PLACEHOLDER';
-import filter from '../array/filter';
+import { Fn } from '../../types';
+import { curry, CurryRemainingParameters, CurryPlaceholderArr, CurryPartialArr } from './curry';
+import { FN_PLACEHOLDER, isFnPlaceholder } from '../const/FN_PLACEHOLDER';
+import { filter } from '../array/filter';
 
 // todo 类型🤔
 type PartialFn = {
@@ -10,13 +10,13 @@ type PartialFn = {
     placeholder: FN_PLACEHOLDER
 }
 
-const partial: PartialFn = (fn, ...args) => {
+export const partial: PartialFn = (fn, ...args) => {
     return curry(fn, filter(args, v => !isFnPlaceholder(v)).length + 1)(...args as any);
 };
 
 partial.placeholder = new FN_PLACEHOLDER();
 
-export default partial;
+
 
 // function log(name: string, age: number) {
 //     // eslint-disable-next-line

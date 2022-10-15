@@ -1,7 +1,7 @@
-import each from '../object/each';
-import { IterableV } from '../../../types/common';
-import isArrLike from '../array/isArrLike';
-import isIterable from '../object/isIterable';
+import { each } from '../object/each';
+import { IterableV } from '../../types';
+import { isArrLike } from '../array/isArrLike';
+import { isIterable } from '../object/isIterable';
 
 // todo 类型
 /**
@@ -9,10 +9,10 @@ import isIterable from '../object/isIterable';
  * @param obj 
  * @param iterator 
  */
-function filter<T extends Iterable<any>>(obj: T, iterator: (v: IterableV<T>, k: number, o: T) => any): Partial<T>;
-function filter<T extends ArrayLike<any>, K extends Exclude<keyof T, 'length'>>(obj: T, iterator: (v: T[K], k: number, o: T) => any): Partial<T>;
-function filter<T, K extends keyof T, V = T[K]>(obj: T, iterator: (v: V, k: K, o: T) => any): Partial<T>;
-function filter(obj, predicate) {
+export function filter<T extends Iterable<any>>(obj: T, iterator: (v: IterableV<T>, k: number, o: T) => any): Partial<T>;
+export function filter<T extends ArrayLike<any>, K extends Exclude<keyof T, 'length'>>(obj: T, iterator: (v: T[K], k: number, o: T) => any): Partial<T>;
+export function filter<T, K extends keyof T, V = T[K]>(obj: T, iterator: (v: V, k: K, o: T) => any): Partial<T>;
+export function filter(obj, predicate) {
     let result;
     if (isArrLike(obj) || isIterable(obj)) {
         result = [];
@@ -32,4 +32,4 @@ function filter(obj, predicate) {
     return result;
 }
 
-export default filter;
+

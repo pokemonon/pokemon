@@ -1,11 +1,18 @@
 {
-    "extends": "./tsconfig.build.json",
     "compilerOptions": {
+        "target": "ES2015",
+        "module": "ESNext",
+        "strict": true,
+        "jsx": "preserve",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": false,
+        "resolveJsonModule": true,
+        "sourceMap": true,
         "baseUrl": ".",
-        "paths": {
-            "@poke/*": [
-                "packages/*/src"
-            ]
-        }
+        "outDir": "dist"
     }
 }

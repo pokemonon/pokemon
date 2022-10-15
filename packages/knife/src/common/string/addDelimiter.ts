@@ -10,7 +10,7 @@ export interface AddDelimiterOptions {
  * @param value 待处理的值
  * @param options 配置
  */
-const addDelimiter = (value = '', {
+export const addDelimiter = (value = '', {
     step = 4, delimiter = ' ', fromRight = false
 }: AddDelimiterOptions) => {
     const regx = new RegExp(`(\\S{${step}})(?=\\S)`, 'g');
@@ -21,4 +21,3 @@ const addDelimiter = (value = '', {
     return fromRight ? result.split('').reverse().join('') : result;
 };
 
-export default addDelimiter;

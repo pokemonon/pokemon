@@ -1,10 +1,10 @@
 import * as path from 'path';
 import fs from 'fs-extra';
-import monoize from '../../common/function/memoize';
+import { memoize } from '../../common/function/memoize';
 
 // let _hasProjectYarn: boolean | null;
 
-// const hasProjectYarn = (cwd) => {
+// export const hasProjectYarn = (cwd) => {
 //     if (_hasProjectYarn !== null) {
 //         return _hasProjectYarn;
 //     }
@@ -13,9 +13,8 @@ import monoize from '../../common/function/memoize';
 //     return (_hasProjectYarn = result);
 // };
 
-const hasProjectYarn = monoize((cwd: string) => {
+export const hasProjectYarn = memoize((cwd: string) => {
     const lockFile = path.resolve(cwd, 'yarn.lock');
     return fs.existsSync(lockFile);
 });
 
-export default hasProjectYarn;

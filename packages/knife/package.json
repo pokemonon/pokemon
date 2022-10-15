@@ -1,60 +1,60 @@
 {
     "name": "@pokemonon/knife",
     "version": "1.0.0-beta.20",
-    "main": "dist/common.js",
-    "module": "dist/esm/common.js",
+    "main": "dist/lib/common/index.js",
+    "module": "dist/es/common/index.js",
     "exports": {
         "./node": {
-            "require": "./dist/node.js",
-            "import": "./dist/esm/node.js"
+            "require": "./dist/lib/node/index.js",
+            "import": "./dist/es/node/index.js"
         },
         "./browser": {
-            "require": "./dist/browser.js",
-            "import": "./dist/esm/browser.js"
+            "require": "./dist/lib/browser/index.js",
+            "import": "./dist/es/browser/index.js"
+        },
+        "./types": {
+            "require": "./dist/lib/types/index.js",
+            "import": "./dist/es/types/index.js"
         },
         ".": {
-            "require": "./dist/common.js",
-            "import": "./dist/esm/common.js"
-        }
-    },
-    "typesVersions": {
-        "*": {
-            "browser": [
-                "./dist/browser.d.ts"
-            ],
-            "node": [
-                "./dist/node.d.ts"
-            ]
-        }
+            "require": "./dist/lib/common/index.js",
+            "import": "./dist/es/common/index.js"
+        },
+        "./*": "./*"
     },
     "license": "MIT",
     "sideEffects": false,
     "scripts": {
-        "dev": "npm run build:common -- --watch & npm run build:node -- --watch & npm run build:browser -- --watch",
-        "build": "yarn refresh && rimraf dist && npm run build:common && npm run build:node && npm run build:browser",
-        "build:common": "tsup src/common/common.ts --format esm,cjs --legacy-output --dts",
-        "build:node": "tsup src/node/node.ts --format esm,cjs --legacy-output --dts",
-        "build:browser": "tsup src/browser/browser.ts --format esm,cjs --legacy-output --dts",
+        "dev": "npm run build -- --watch",
+        "build": "rm -rf dist && packbag rollup",
         "refresh": "ts-node scripts/initEntry.ts",
         "doc:dev": "vitepress dev doc",
-        "doc": "jsdoc -c jsdoc.json"
+        "doc": "jsdoc -c jsdoc.json",
+        "test": "vitest"
     },
     "devDependencies": {
+        "@packbag/cli": "0.0.1-alpha.3",
+        "@packbag/cli-rollup": "0.0.1-alpha.3",
+        "@packbag/cli-rollup-plugin-common": "0.0.1-alpha.3",
         "@types/listr": "^0.14.3",
         "better-docs": "^2.3.2",
         "eslint-plugin-tsdoc": "^0.2.11",
         "jsdoc": "^3.6.6",
         "jsdoc-plugin-typescript": "^2.0.6",
         "rimraf": "^3.0.2",
-        "tsup": "^4.8.21"
+        "tsup": "^4.8.21",
+        "vite-tsconfig-paths": "^3.5.1",
+        "vitest": "^0.24.1"
     },
     "dependencies": {
         "chalk": "^4.1.1",
         "execa": "^5.0.0",
         "fs-extra": "^10.0.0",
         "listr": "^0.14.3",
-        "strip-ansi": "^6.0.0",
-        "typescript": "^4.2.4"
+        "strip-ansi": "^6.0.0"
+    },
+    "peerDependencies": {
+        "typescript": "~4.7.4"
     },
     "gitHead": "f18dd668b20870ecd547f307526adc2e1272b9f1"
 }

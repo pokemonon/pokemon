@@ -1,7 +1,7 @@
 import execa from 'execa';
-import momoize from '../../common/function/memoize';
+import { memoize } from '../../common/function/memoize';
 
-const hasNpm = momoize(() => {
+export const hasNpm = memoize(() => {
     try {
         execa.sync('npm', ['--version'], { stdio: 'ignore' });
         return true;
@@ -10,4 +10,3 @@ const hasNpm = momoize(() => {
     }
 });
 
-export default hasNpm;

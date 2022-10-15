@@ -4,7 +4,7 @@ interface GetAllKeysOpts {
     proto?: boolean;
     symbol?: boolean;
 }
-const getAllKeys = (obj, opts: GetAllKeysOpts = {}) => {
+export const getAllKeys = (obj, opts: GetAllKeysOpts = {}) => {
     const {
         unenumerable = false,
         proto = true,
@@ -26,4 +26,4 @@ const getAllKeys = (obj, opts: GetAllKeysOpts = {}) => {
     return keys;
 };
 
-export default getAllKeys;
+

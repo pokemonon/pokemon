@@ -4,8 +4,7 @@
  * @param obj
  * @return {boolean}
  */
-const isEmptyObject = (obj: Object): boolean => {
+export const isEmptyObject = (obj: Object): boolean => {
     return !Object.keys(obj).length;
 };
 
-export default isEmptyObject;

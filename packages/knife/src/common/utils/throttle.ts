@@ -9,7 +9,7 @@ export interface ThrottleOptions {
  * @param fn
  * @param immediate 是否立即执行
  */
-const throttle = (fn, wait: number, {
+export const throttle = (fn, wait: number, {
     immediate = false
 }: ThrottleOptions) => {
     let timer;
@@ -37,4 +37,3 @@ const throttle = (fn, wait: number, {
     };
 };
 
-export default throttle;

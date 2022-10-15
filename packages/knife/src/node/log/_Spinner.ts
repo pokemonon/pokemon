@@ -2,7 +2,7 @@
  * todo spinner list
  */
 import Listr from 'listr';
-import SpinnerRenderer from './_spinner-renderer';
+import { SpinnerRenderer } from './_spinner-renderer';
 // import ListrUpdateRenderer from 'listr-update-renderer';
 
 // type ListrTaskObject<Ctx> = Listr.ListrTaskObject<Ctx>
@@ -39,7 +39,7 @@ interface SpinnerOp {
     resolve: (value?: any) => void;
     reject: (reason?: any) => void;
 }
-class Spinner {
+export class Spinner {
     #op!: SpinnerOp
 
     constructor(text: string) {
@@ -70,8 +70,6 @@ class Spinner {
         this.#op.reject(new Error(reason));
     }
 }
-
-export default Spinner;
 
 // const spinner = new Spinner('hello')
 // spinner.start()

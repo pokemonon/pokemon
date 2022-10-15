@@ -69,12 +69,11 @@ const clearConsole = title => {
     }
 };
 
-export default {
+export const logger = {
     log,
     info,
     done,
     warn,
     error,
     clearConsole
-
 };

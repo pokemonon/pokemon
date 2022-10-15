@@ -1,16 +1,14 @@
 // import createAssign from './createAssign';
 // import getAllKeys from './getAllKeys';
 
-// const assignIn = createAssign(getAllKeys);
+// export export const assignIn = createAssign(getAllKeys);
 
-// export default assignIn;
-import createAssigner from './createAssigner';
-import assigner from '../internal/assigner';
-import getAllKeys from './getAllKeys';
+// 
+import { createAssigner } from './createAssigner';
+import { assigner } from '../internal/assigner';
+import { getAllKeys } from './getAllKeys';
 
-const assignIn = createAssigner(assigner(getAllKeys));
-
-export default assignIn;
+export const assignIn = createAssigner(assigner(getAllKeys));
 
 // class Person {}
 // // eslint-disable-next-line

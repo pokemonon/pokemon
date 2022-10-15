@@ -82,7 +82,7 @@ export interface CamelCaseOptions {
  * @param {CamelCaseOptions} options 
  * @returns {string}
  */
-function camelCase(input: string, options: CamelCaseOptions = {}) {
+export function camelCase(input: string, options: CamelCaseOptions = {}) {
     if (!(typeof input === 'string' || Array.isArray(input))) {
         throw new TypeError('Expected the input to be `string | string[]`');
     }
@@ -137,4 +137,4 @@ function camelCase(input: string, options: CamelCaseOptions = {}) {
     return postProcess(input, toUpperCase);
 }
 
-export default camelCase;
+

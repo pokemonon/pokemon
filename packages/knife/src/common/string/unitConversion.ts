@@ -1,4 +1,4 @@
-import addDelimiterRight from './addDelimiterRight';
+import { addDelimiterRight } from './addDelimiterRight';
 
 /**
  * @desc 单位转换，默认3位逗号，保留2位小数，比例是100:1
@@ -11,7 +11,7 @@ import addDelimiterRight from './addDelimiterRight';
  * @param {String} opts.placeholder 占位符（default: --）
  * @return {String} 值无效或者不存在,则返回
  */
-const unitConversion = (value: string | number, {
+export const unitConversion = (value: string | number, {
     rate = 100,
     place = 2,
     comma = true,
@@ -31,4 +31,4 @@ const unitConversion = (value: string | number, {
     return negative + integer + (num[1] ? `.${num[1]}` : '');
 };
 
-export default unitConversion;
+
