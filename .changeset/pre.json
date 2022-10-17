@@ -4,5 +4,7 @@
   "initialVersions": {
     "@pokemonon/knife": "1.1.0"
   },
-  "changesets": []
+  "changesets": [
+    "odd-cats-drum"
+  ]
 }
