@@ -28,8 +28,7 @@
         "dev": "npm run build -- --watch",
         "build": "rm -rf dist && packbag rollup",
         "refresh": "ts-node scripts/initEntry.ts",
-        "doc:dev": "vitepress dev doc",
-        "doc": "jsdoc -c jsdoc.json",
+        "docs": "npm run build && tsx scripts/docs",
         "test": "vitest"
     },
     "devDependencies": {
