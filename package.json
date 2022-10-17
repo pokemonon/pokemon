@@ -12,7 +12,7 @@
         "eachdocs": "pnpm run -r docs",
         "docs:dev": "npm run eachdocs && vitepress",
         "docs:build": "pnpm run eachdocs && vitepress build",
-        "bump": "changeset && HUSKY=0 changeset version",
+        "bump": "HUSKY=0 changeset && HUSKY=0 changeset version",
         "release": "npm run build && changeset publish"
     },
     "devDependencies": {
