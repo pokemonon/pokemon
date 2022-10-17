@@ -1,0 +1,10 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@pokemonon/knife": "1.1.0"
+  },
+  "changesets": [
+    "odd-cats-drum"
+  ]
+}

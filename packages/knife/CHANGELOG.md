@@ -1,5 +1,11 @@
 # @pokemonon/knife
 
+## 1.2.0-beta.0
+
+### Minor Changes
+
+- 584a545: add methods about package
+
 ## 1.1.0
 
 ### Minor Changes
