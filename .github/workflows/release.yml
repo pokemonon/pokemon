@@ -36,4 +36,7 @@ jobs:
         run: nr release
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      
+      - name: Tag
+        run: git push --follow-tags
 
