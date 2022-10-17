@@ -1,5 +1,5 @@
-import each from './each';
-import isArray from '../base/isArray';
+import { each } from './each';
+import { isArray } from '../base/isArray';
 
 /**
  * todo 不同类型及深度拷贝
@@ -8,7 +8,7 @@ import isArray from '../base/isArray';
  * @param target 
  * @returns {T}
  */
-const cloneDeep = <T>(target: T): T => {
+export const cloneDeep = <T>(target: T): T => {
     if (typeof target !== 'object') {
         return target;
     }
@@ -26,4 +26,4 @@ const cloneDeep = <T>(target: T): T => {
     return obj;
 };
 
-export default cloneDeep;
+

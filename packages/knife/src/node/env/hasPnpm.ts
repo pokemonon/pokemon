@@ -1,7 +1,7 @@
 import execa from 'execa';
-import momoize from '../../common/function/memoize';
+import { memoize } from '../../common/function/memoize';
 
-const hasPnpm = momoize(() => {
+export const hasPnpm = memoize(() => {
     try {
         execa('pnpm', ['--version'], { stdio: 'ignore' });
         return true;
@@ -10,4 +10,3 @@ const hasPnpm = momoize(() => {
     }
 });
 
-export default hasPnpm;

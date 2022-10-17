@@ -1,7 +1,7 @@
-import { Fn } from '../../../types/common';
+import { Fn } from '../../types';
 
 const defaultResolver = (...args) => args[0];
-const memoize = <T extends Fn>(fn: T, resolver = defaultResolver) => {
+export const memoize = <T extends Fn>(fn: T, resolver = defaultResolver) => {
     const cache = new memoize.Cache;
     return ((...args) => {
         const key = resolver(...args);
@@ -16,4 +16,4 @@ const memoize = <T extends Fn>(fn: T, resolver = defaultResolver) => {
 
 memoize.Cache = Map;
 
-export default memoize;
+

@@ -1,9 +1,8 @@
-import isString from '../base/isString';
-import noop from '../function/noop';
-import onceFn from '../function/once';
-import { Fn } from '../../../types/common';
-import Emitter from './Emitter';
-import browserLogger from '../../browser/log/logger';
+import { isString } from '../base/isString';
+import { noop } from '../function/noop';
+import { once as onceFn } from '../function/once';
+import { Fn } from '../../types';
+import { Emitter } from './Emitter';
 import { isArray, isDef } from '../base';
 
 const ID_PREFIX = 'POKEMON_EVENTTOP_ID';
@@ -27,7 +26,7 @@ type EmitAdapter<Evt> = (info: EmitAdapterInfo<Evt>) => void
 interface EventToPOpts<Evt> {
     onAdapter: OnAdapter<Evt>;
     emitAdapter: EmitAdapter<Evt>;
-    logger?: typeof browserLogger
+    // logger?: typeof browserLogger
 }
 
 export interface extendedPromise<T, U = any> extends Promise<T> {
@@ -40,11 +39,11 @@ export interface extendedPromise<T, U = any> extends Promise<T> {
  * @param opts 
  * @returns 
  */
-function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
+export function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
     const {
         onAdapter,
         emitAdapter,
-        logger = browserLogger
+        // logger = browserLogger
     } = opts;
 
     /**
@@ -64,7 +63,7 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
     emitter.on(RESOLVE_EVENT, (_evt, id, data, type: ResolveEventType) => {
         const item = resolves.get(id); 
         if (!item) {
-            logger.warn('no is exist');
+            // logger.warn('no is exist');
             return;
         }
         resolves.delete(id);
@@ -119,7 +118,7 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
         if (isString(target)) {
             isDef(eventName) && args.unshift(eventName);
             eventName = target;
-            target = null;
+            target = null as any;
         }
 
         function send(target: U, args: any) {
@@ -191,4 +190,4 @@ function eventToP<Evt = any>(opts: EventToPOpts<Evt>) {
     };
 }
 
-export default eventToP;
+

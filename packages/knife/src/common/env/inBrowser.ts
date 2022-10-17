@@ -1,3 +1,1 @@
-const isBrowser = typeof window !== undefined;
-
-export default isBrowser;
+export const inBrowser = typeof window !== undefined;

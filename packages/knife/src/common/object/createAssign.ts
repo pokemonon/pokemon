@@ -1,7 +1,7 @@
-import each from './each';
-import isFunction from '../base/isFunction';
-import { Fn } from '../../../types/common';
-import isDef from '../base/isDef';
+import { each } from './each';
+import { isFunction } from '../base/isFunction';
+import { Fn } from '../../types';
+import { isDef } from '../base/isDef';
 
 /**
  * todo 不同类型及深度拷贝
@@ -12,7 +12,7 @@ import isDef from '../base/isDef';
  */
 type Customizer = (objVal?, srcVal?, key?, obj?, src?) => boolean
 
-const createAssign = <T extends Fn<any[], string[]>>(getKeys: T) => {
+export const createAssign = <T extends Fn<any[], string[]>>(getKeys: T) => {
     const defaultCustomizer: Customizer = (_objVal, srcVal) => isDef(srcVal);
     
     // todo 类型
@@ -42,4 +42,4 @@ const createAssign = <T extends Fn<any[], string[]>>(getKeys: T) => {
     return assign;
 };
 
-export default createAssign;
+

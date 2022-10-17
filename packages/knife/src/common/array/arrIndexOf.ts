@@ -6,6 +6,6 @@
  * @param {any} value 目标值
  * @returns {number}
  */
-const arrIndexOf = (arr: Array<Record<any, any>>, key: any, value: any) => arr.findIndex(i => i && i[key] === value);
+export const arrIndexOf = (arr: Array<Record<any, any>>, key: any, value: any) => arr.findIndex(i => i && i[key] === value);
 
-export default arrIndexOf;
+

@@ -4,7 +4,7 @@
  * @param val 待转化
  * @param result 默认值
  */
-const getJsonData = (val, result = {}) => {
+export const getJsonData = (val, result = {}) => {
     if (!val) {
         return result;
     }
@@ -15,4 +15,3 @@ const getJsonData = (val, result = {}) => {
     }
 };
 
-export default getJsonData;

@@ -4,7 +4,7 @@
  * @param data 目标对象
  * @param prop 属性路径
  */
-const setDeepProp = (data, prop: string, val: any) => {
+export const setDeepProp = (data, prop: string, val: any) => {
     const keys = prop.split('.');
     const kLen = keys.length;
     let t = data;
@@ -17,4 +17,3 @@ const setDeepProp = (data, prop: string, val: any) => {
     });
 };
 
-export default setDeepProp;

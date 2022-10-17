@@ -18,7 +18,7 @@ const info = createLog('background:blue;color:black;margin-right: 1em;', '')('2_
 const warn = createLog('background:yellow;color:black;margin-right:1em;', '')('2_ WARN ', '1');
 const error = createLog('background:red;color:black;margin-right:1em', '')('2_ ERROR ', '1'); 
 
-export default {
+export const logger = {
     createLog,
     info,
     warn,

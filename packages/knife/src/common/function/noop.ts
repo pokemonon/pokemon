@@ -1,8 +1,7 @@
 /**
  * 空函数
  */
-const noop = () => {
+export const noop = () => {
     //
 };
 
-export default noop;

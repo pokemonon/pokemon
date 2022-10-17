@@ -1,7 +1,7 @@
 import execa from 'execa';
-import momoize from '../../common/function/memoize';
+import { memoize } from '../../common/function/memoize';
 
-const hasProjectGit = momoize((cwd: string) => {
+export const hasProjectGit = memoize((cwd: string) => {
     try {
         execa.sync('git', ['status'], { stdio: 'ignore', cwd });
         return true;
@@ -10,4 +10,3 @@ const hasProjectGit = momoize((cwd: string) => {
     }
 });
 
-export default hasProjectGit;

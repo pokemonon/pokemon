@@ -1,4 +1,4 @@
-import flatten from './flatten';
+import { flatten } from './flatten';
 
 /**
  * 数组全部铺平
@@ -6,6 +6,6 @@ import flatten from './flatten';
  * @param arr 
  * @returns {T[]} 
  */
-const flattenDeep = <T>(arr: T[]) => flatten(arr, true);
+export const flattenDeep = <T>(arr: T[]) => flatten(arr, true);
 
-export default flattenDeep;
+

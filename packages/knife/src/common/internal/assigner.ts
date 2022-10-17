@@ -1,9 +1,9 @@
-import each from '../object/each';
+import { each } from '../object/each';
 // import dc from './defaultCustomizer';
-import isDef from '../base/isDef';
+import { isDef } from '../base/isDef';
 
 const dc = (objVal, srcVal, key, obj, src) => isDef(srcVal);
-const assigner = (getKeys, defaultCustomizer = dc) => (obj, src, customizer = defaultCustomizer) => {
+export const assigner = (getKeys, defaultCustomizer = dc) => (obj, src, customizer = defaultCustomizer) => {
     const keys = getKeys(src);
     each(keys, (k: any) => {
         const objVal = obj[k];
@@ -15,4 +15,3 @@ const assigner = (getKeys, defaultCustomizer = dc) => (obj, src, customizer = de
     return obj;
 };
 
-export default assigner;

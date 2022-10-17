@@ -4,9 +4,9 @@
  * @param delay 延迟时间
  * @param fn 回调函数
  */
-const debounce = (fn, delay: number) => {
+export const debounce = (fn, delay: number) => {
     let timer;
-    return function(...args) {
+    return function(this, ...args) {
         clearTimeout(timer);
         timer = setTimeout(() => {
             fn.apply(this, args);
@@ -14,4 +14,3 @@ const debounce = (fn, delay: number) => {
     };
 };
 
-export default debounce;

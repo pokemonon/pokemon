@@ -1,9 +1,9 @@
 import execa from 'execa';
-import memoize from '../../common/function/memoize';
+import { memoize } from '../../common/function/memoize';
 
 // let _hasYarn: boolean | null;
 
-// const hasYarn = () => {
+// export const hasYarn = () => {
 //     if (_hasYarn !== null) {
 //         return _hasYarn;
 //     }
@@ -15,7 +15,7 @@ import memoize from '../../common/function/memoize';
 //     }
 // };
 
-const hasYarn = memoize(() => {
+export const hasYarn = memoize(() => {
     try {
         execa.sync('yarn', ['--version'], { stdio: 'ignore' });
         return true;
@@ -24,4 +24,3 @@ const hasYarn = memoize(() => {
     }
 });
 
-export default hasYarn;

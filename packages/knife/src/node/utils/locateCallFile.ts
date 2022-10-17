@@ -1,4 +1,4 @@
-const locateCallFile = (deep = 1) => {
+export const locateCallFile = (deep = 1) => {
     // extract api.render() callsite file location using error stack
     const obj = {} as { stack: string; };
     Error.captureStackTrace(obj);
@@ -14,7 +14,7 @@ const locateCallFile = (deep = 1) => {
         matchResult = callSite.match(anonymousStackRegExp);
     }
 
-    return matchResult[1];
+    return matchResult![1];
 };
 
-export default locateCallFile;
+

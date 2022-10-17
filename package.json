@@ -8,36 +8,39 @@
         "packages/*"
     ],
     "scripts": {
-        "ts": "ts-node -r tsconfig-paths/register",
-        "clean": "lerna clean -y && rm -rf node_modules",
-        "build": "lerna run build",
-        "pub": "lerna publish",
-        "new": "ts-node scripts/create.ts",
-        "postinstall": "lerna bootstrap",
-        "doc": "lerna exec npm run doc",
-        "bump": "HUSKY=0 lerna version",
-        "release": "lerna publish from-package --yes"
+        "build": "pnpm -r --paralle run build",
+        "eachdocs": "pnpm run -r docs",
+        "docs:dev": "npm run eachdocs && vitepress",
+        "docs:build": "pnpm run eachdocs && vitepress build",
+        "bump": "HUSKY=0 changeset && changeset version",
+        "release": "npm run build && changeset publish"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.23.0",
+        "@packbag/cli": "0.0.1-alpha.3",
+        "@packbag/cli-rollup": "0.0.1-alpha.3",
+        "@packbag/cli-rollup-plugin-common": "0.0.1-alpha.3",
         "@types/ejs": "^3.0.6",
         "@types/fs-extra": "^9.0.9",
         "@typescript-eslint/eslint-plugin": "^4.11.1",
         "@typescript-eslint/parser": "^4.11.1",
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "^3.3.0",
         "eslint": "^7.17.0",
-        "lerna": "^3.22.1",
+        "husky": "^6.0.0",
+        "standard-version": "^9.3.0",
         "ts-node": "^9.1.1",
         "tsconfig-paths": "^3.9.0",
         "tsup": "^4.8.21",
-        "typescript": "^4.3.2",
-        "commitizen": "^4.2.4",
-        "cz-conventional-changelog": "^3.3.0",
-        "husky": "^6.0.0",
-        "standard-version": "^9.3.0"
+        "typescript": "~4.7.4",
+        "vitepress": "1.0.0-alpha.20",
+        "vue": "^3.2.41"
     },
     "dependencies": {
         "ejs": "^3.1.6",
         "fs-extra": "^9.1.0",
-        "globby": "^11.0.3"
+        "globby": "^11.0.3",
+        "tsx": "^3.10.1"
     },
     "config": {
         "commitizen": {

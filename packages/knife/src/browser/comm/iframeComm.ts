@@ -1,5 +1,4 @@
-import eventToP from '../../common/utils/eventToP';
-// import isArray from '../../common/base/isArray';
+import { eventToP } from '../../common/utils/eventToP';
 
 interface IframeCommOpts {
     defaultTarget: any;
@@ -9,7 +8,7 @@ interface IframeCommOpts {
  * 简化iframe间通信api
  * @category Comm
  */
-const iframeComm = ({
+export const iframeComm = ({
     defaultTarget,
     defaultOrigin = '*'
 } = {} as IframeCommOpts) => {
@@ -41,8 +40,6 @@ const iframeComm = ({
         }
     });
 };
-
-export default iframeComm;
 
 /**
  * @examples

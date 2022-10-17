@@ -4,7 +4,7 @@
  * @param arr
  * @param size
  */
-const chunk = (arr: any[], size: number) => {
+export const chunk = (arr: any[], size: number) => {
     const result: any[] = [];
 
     arr = [...arr];
@@ -15,4 +15,3 @@ const chunk = (arr: any[], size: number) => {
     return result;
 };
 
-export default chunk;

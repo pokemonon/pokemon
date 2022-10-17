@@ -1,11 +1,11 @@
-import { Fn } from '../../../types/common';
-import once from '../function/once';
+import { Fn } from '../../types';
+import { once } from '../function/once';
 
 /**
  * 事件触发器
  * @class
  */
-class Emitter {
+export class Emitter {
     #events: Record<string, Fn[]> = {};
 
     /**
@@ -81,4 +81,4 @@ class Emitter {
     }
 }
 
-export default Emitter;
+

@@ -1,7 +1,7 @@
 import execa from 'execa';
-import monoize from '../../common/function/memoize';
+import { memoize } from '../../common/function/memoize';
 
-const hasGit = monoize(() => {
+export const hasGit = memoize(() => {
     try {
         execa.sync('git', ['--version'], { stdio: 'ignore' });
         return true;
@@ -10,4 +10,3 @@ const hasGit = monoize(() => {
     }
 });
 
-export default hasGit;

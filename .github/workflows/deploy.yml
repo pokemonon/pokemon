@@ -14,31 +14,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.3.4
-    
-      - uses: actions/setup-node@v2.1.5
+      - uses: actions/checkout@v3
         with:
-          node-version: 14.x
-          
-      - uses: CultureHQ/actions-yarn@v1.0.1
-      
-      - name: install deps
-        run: yarn
+          fetch-depth: 0
+
+      - name: Set node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup
+        run: npm i -g @antfu/ni pnpm
+
+      - name: Install Dependencies
+        run: ni
+
+      - name: Build Docs
+        run: nr docs:build
         
-      - name: build docs
-        run: yarn doc
-        
-      - name: deploy docs to gh-pages
-        run: |
-          cd assets
-          git init
-          git config --local user.name $USER_NAME
-          git config --local user.email $USER_EMAIL
-          git remote add origin https://$COMMIT_SECRET@github.com/$GITHUB_REPOSITORY.git
-          git checkout -b gh-pages
-          git add .
-          git commit -m "feat: deploy doc"
-          git push origin gh-pages -f
-          echo 🚀
+      # - name: deploy docs to gh-pages
+      #   run: |
+      #     cd assets
+      #     git init
+      #     git config --local user.name $USER_NAME
+      #     git config --local user.email $USER_EMAIL
+      #     git remote add origin https://$COMMIT_SECRET@github.com/$GITHUB_REPOSITORY.git
+      #     git checkout -b gh-pages
+      #     git add .
+      #     git commit -m "feat: deploy doc"
+      #     git push origin gh-pages -f
+      #     echo 🚀
+
+
+      - name: Deploy Docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./vitepress/dist
       
     

@@ -1,5 +1,5 @@
-import FN_PLACEHOLDER, { isFnPlaceholder } from '../const/FN_PLACEHOLDER';
-import { Fn } from '../../../types/common';
+import { isFnPlaceholder, FN_PLACEHOLDER } from '../const/FN_PLACEHOLDER';
+import { Fn } from '../../types';
 
 /**
  * 返回T的子集 从最后一个元素开始
@@ -55,8 +55,8 @@ export interface Curry {
  * @param {number} arity
  * @returns {function}
  */
-const curry: Curry = (fn, arity = fn.length) => {
-    return function curriedFn(...args: any[]) {
+export const curry: Curry = (fn, arity = fn.length) => {
+    return function curriedFn(this: any, ...args: any[]) {
         if (args.length >= arity && args.every(i => !isFnPlaceholder(i))) {
             return fn.apply(this, args);
         }
@@ -75,7 +75,7 @@ const curry: Curry = (fn, arity = fn.length) => {
 };
 curry.placeholder = new FN_PLACEHOLDER();
 
-export default curry;
+
 
 // const log = (name: string, age: number, flag: boolean) => {
 //     console.log(name, age, flag);
