@@ -9,7 +9,8 @@ async function start() {
     const files = await globby('src/**/*.ts', {
         ignore: [
             '**/index.ts',
-            '**/_**'
+            '**/_**',
+            'src/types'
         ]
     });
     for (const file of files) {
