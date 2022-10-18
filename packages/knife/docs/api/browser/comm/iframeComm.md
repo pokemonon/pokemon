@@ -15,7 +15,7 @@ export declare const iframeComm: ({ defaultTarget, defaultOrigin }?: IframeCommO
         <T_1 = any, U = any>(target: U | U[], eventName: string, ...args: any[]): import("../../common/utils/eventToP").extendedPromise<T_1, any>;
     };
     once: (eventName: string, listener: (evt: MessageEvent<any>, ...args: any[]) => any) => () => void;
-    off: (eventName: string, listener: import("../../types").Fn<any[], any>) => void;
+    off: (eventName: string, listener: import("../../types/index").Fn<any[], any>) => void;
     removeAllListeners: (eventName?: string | undefined) => void;
     close: any;
 };

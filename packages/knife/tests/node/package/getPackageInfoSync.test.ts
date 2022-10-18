@@ -1,24 +1,3 @@
-# getPackageInfoSync
-```ts
-import { ResolvePackageOptions } from './resolvePackage';
-/**
- * 获取依赖包信息
- * @param name
- * @param options
- * @returns
- */
-export declare function getPackageInfoSync(name: string, options?: ResolvePackageOptions): {
-    name: string;
-    version: any;
-    rootPath: string;
-    packageJsonPath: string;
-    packageJson: any;
-} | undefined;
-
-```
-
-## Test
-```ts
 import { getPackageInfoSync } from '@pokemonon/knife/node';
 import path from 'path';
 import { describe, expect, test } from 'vitest';
@@ -40,4 +19,3 @@ describe('getPackageInfoSync', () => {
         expect(pkgInfo).toEqual(vitestInfo);
     });
 });
-```

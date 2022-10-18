@@ -67,7 +67,7 @@ export default defineConfig({
         nav: [
             {
                 text: `knife@${knifeVersion}`,
-                link: '/packages/knife/docs/api/common/base/isType',
+                link: '/packages/knife/docs/',
             }
         ],
         sidebar: {

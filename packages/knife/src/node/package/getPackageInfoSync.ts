@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { resolvePackage } from './resolvePackage';
+import { resolvePackage, ResolvePackageOptions } from './resolvePackage';
 
 /**
  * 获取依赖包信息
@@ -8,7 +8,7 @@ import { resolvePackage } from './resolvePackage';
  * @param options 
  * @returns 
  */
-export function getPackageInfoSync(name, options) {
+export function getPackageInfoSync(name: string, options: ResolvePackageOptions = {}) {
     const packageJsonPath = resolvePackage(name, options);
     if (!packageJsonPath)
         return;
