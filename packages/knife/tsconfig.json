@@ -5,7 +5,7 @@
         "module": "commonjs",
         "strict": true,
         "jsx": "preserve",
-        "moduleResolution": "node",
+        "moduleResolution": "node16",
         "experimentalDecorators": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
@@ -14,7 +14,13 @@
         "baseUrl": ".",
         "paths": {
             "@pokemonon/knife": [
-                "src/common/index.ts"
+                "src/common/index.ts",
+            ],
+            "@pokemonon/knife/node": [
+                "src/node/index.ts",
+            ],
+            "@pokemonon/knife/browser": [
+                "src/browser/index.ts",
             ],
         }
     },

@@ -2,7 +2,7 @@
  * @copy https://github.com/antfu/local-pkg/blob/main/index.mjs
  */
 import { existsSync, promises as fs } from 'fs';
-import { findUp } from 'find-up';
+import findUp from 'find-up';
 
 /**
  * 加载package.json文件

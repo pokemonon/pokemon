@@ -1,4 +1,4 @@
-import { resolvePackage } from './resolvePackage';
+import { resolvePackage, ResolvePackageOptions } from './resolvePackage';
 
 /**
  * 判断依赖是否安装
@@ -6,6 +6,6 @@ import { resolvePackage } from './resolvePackage';
  * @param options 
  * @returns 
  */
-export function isPackageExists(name, options) {
+export function isPackageExists(name: string, options: ResolvePackageOptions = {}) {
     return !!resolvePackage(name, options);
 }

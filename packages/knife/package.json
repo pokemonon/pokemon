@@ -1,12 +1,13 @@
 {
     "name": "@pokemonon/knife",
-    "version": "1.2.0-beta.0",
+    "version": "1.2.0-beta.2",
     "main": "dist/lib/common/index.js",
     "module": "dist/es/common/index.js",
     "exports": {
         "./node": {
             "require": "./dist/lib/node/index.js",
-            "import": "./dist/es/node/index.js"
+            "import": "./dist/es/node/index.js",
+            "default": "./dist/es/node/index.js"
         },
         "./browser": {
             "require": "./dist/lib/browser/index.js",
@@ -48,7 +49,7 @@
     "dependencies": {
         "chalk": "^4.1.1",
         "execa": "^5.0.0",
-        "find-up": "^6.3.0",
+        "find-up": "^5.0.0",
         "fs-extra": "^10.0.0",
         "listr": "^0.14.3",
         "strip-ansi": "^6.0.0"

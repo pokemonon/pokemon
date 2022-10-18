@@ -1,5 +1,17 @@
 # @pokemonon/knife
 
+## 1.2.0-beta.2
+
+### Patch Changes
+
+- add changeset
+
+## 1.2.0-beta.1
+
+### Patch Changes
+
+- 8c99a91: set find-up@5
+
 ## 1.2.0-beta.0
 
 ### Minor Changes
