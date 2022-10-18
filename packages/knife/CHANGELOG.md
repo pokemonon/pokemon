@@ -1,5 +1,11 @@
 # @pokemonon/knife
 
+## 1.2.0-beta.2
+
+### Patch Changes
+
+- add changeset
+
 ## 1.2.0-beta.1
 
 ### Patch Changes
