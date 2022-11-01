@@ -265,4 +265,9 @@ program.command('remove')
         manager.removeComponent('common.array.test');
     });
 
+program.command('refresh')
+    .action(() => {
+        // manager.module.render
+    });
+
 program.parse();

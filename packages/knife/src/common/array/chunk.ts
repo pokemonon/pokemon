@@ -1,5 +1,5 @@
 /**
- * 分组
+ * group array
  * @category Array
  * @param arr
  * @param size

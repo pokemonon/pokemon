@@ -1,5 +1,5 @@
 /* auto generate! */
-export * from './arrIndexOf';
+export * from './findIndexOf';
 export * from './chunk';
 export * from './filter';
 export * from './flatten';

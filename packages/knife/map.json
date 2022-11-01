@@ -6,7 +6,7 @@
         "type": "array",
         "list": [
           {
-            "name": "arrIndexOf"
+            "name": "findIndexOf"
           },
           {
             "name": "chunk"
