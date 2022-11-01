@@ -12,3 +12,14 @@ export declare const partial: PartialFn;
 export {};
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('partial', () => {
+    test('partial', () => {
+
+    });
+});
+```

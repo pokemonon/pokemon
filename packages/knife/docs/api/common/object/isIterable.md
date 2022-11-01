@@ -7,3 +7,14 @@
 export declare const isIterable: <T>(o: any) => o is Iterable<T>;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('isIterable', () => {
+    test('isIterable', () => {
+
+    });
+});
+```

@@ -10,3 +10,14 @@ export declare const logger: {
 };
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('logger', () => {
+    test('logger', () => {
+
+    });
+});
+```

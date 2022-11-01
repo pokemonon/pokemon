@@ -11,3 +11,14 @@ export declare function filter<T extends ArrayLike<any>, K extends Exclude<keyof
 export declare function filter<T, K extends keyof T, V = T[K]>(obj: T, iterator: (v: V, k: K, o: T) => any): Partial<T>;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('filter', () => {
+    test('filter', () => {
+
+    });
+});
+```

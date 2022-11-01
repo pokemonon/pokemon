@@ -6,3 +6,14 @@ export declare const getKeys: {
 };
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('getKeys', () => {
+    test('getKeys', () => {
+
+    });
+});
+```

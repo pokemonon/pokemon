@@ -45,3 +45,14 @@ export declare class PackageManager {
 export {};
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('PackageManager', () => {
+    test('PackageManager', () => {
+
+    });
+});
+```

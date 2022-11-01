@@ -11,3 +11,14 @@
 export declare const arrIndexOf: (arr: Array<Record<any, any>>, key: any, value: any) => number;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('arrIndexOf', () => {
+    test('arrIndexOf', () => {
+
+    });
+});
+```

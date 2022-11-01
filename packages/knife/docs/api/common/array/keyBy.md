@@ -10,3 +10,14 @@ export declare function keyBy<T extends any[], K extends keyof T[number], V exte
 export declare function keyBy<T extends any[], V extends T[number]>(o: T, iter: (v: V) => any): Record<any, V>;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('keyBy', () => {
+    test('keyBy', () => {
+
+    });
+});
+```

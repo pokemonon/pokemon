@@ -7,3 +7,14 @@
 export declare const isHttps: (value: any) => boolean;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('isHttps', () => {
+    test('isHttps', () => {
+
+    });
+});
+```

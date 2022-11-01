@@ -9,3 +9,14 @@
 export declare const getDeepProp: (data: any, prop: string) => any;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('getDeepProp', () => {
+    test('getDeepProp', () => {
+
+    });
+});
+```

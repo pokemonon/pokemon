@@ -10,3 +10,14 @@
 export declare const cloneDeep: <T>(target: T) => T;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('cloneDeep', () => {
+    test('cloneDeep', () => {
+
+    });
+});
+```

@@ -7,3 +7,14 @@
 export declare const isObject: <K = Object>(val: any) => val is K;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('isObject', () => {
+    test('isObject', () => {
+
+    });
+});
+```

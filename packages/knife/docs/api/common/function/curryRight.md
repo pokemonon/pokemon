@@ -44,3 +44,14 @@ export interface CurryRight {
 export declare const curryRight: CurryRight;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('curryRight', () => {
+    test('curryRight', () => {
+
+    });
+});
+```

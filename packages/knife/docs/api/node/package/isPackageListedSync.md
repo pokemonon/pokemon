@@ -9,3 +9,14 @@
 export declare function isPackageListedSync(name: string, cwd?: string): boolean;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('isPackageListedSync', () => {
+    test('isPackageListedSync', () => {
+
+    });
+});
+```

@@ -9,3 +9,14 @@
 export declare const flattenDeep: <T>(arr: T[]) => T[];
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('flattenDeep', () => {
+    test('flattenDeep', () => {
+
+    });
+});
+```

@@ -44,3 +44,14 @@ export interface Curry {
 export declare const curry: Curry;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('curry', () => {
+    test('curry', () => {
+
+    });
+});
+```

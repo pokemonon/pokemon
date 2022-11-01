@@ -9,3 +9,14 @@ export declare const getAllKeys: (obj: any, opts?: GetAllKeysOpts) => any[];
 export {};
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('getAllKeys', () => {
+    test('getAllKeys', () => {
+
+    });
+});
+```

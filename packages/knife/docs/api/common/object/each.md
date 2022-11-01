@@ -10,3 +10,14 @@ export declare function each<T extends ArrayLike<any>, K extends Exclude<keyof T
 export declare function each<T, K extends keyof T, V = T[K]>(obj: T, iterator: (v: V, k: K, o: T) => any): void;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('each', () => {
+    test('each', () => {
+
+    });
+});
+```

@@ -20,3 +20,14 @@ export declare const createAssign: <T extends Fn<any[], string[]>>(getKeys: T) =
 export {};
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('createAssign', () => {
+    test('createAssign', () => {
+
+    });
+});
+```

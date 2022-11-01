@@ -37,3 +37,14 @@ export declare function eventToP<Evt = any>(opts: EventToPOpts<Evt>): {
 export {};
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('eventToP', () => {
+    test('eventToP', () => {
+
+    });
+});
+```

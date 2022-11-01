@@ -12,3 +12,14 @@ export declare const once: <T extends Fn<any[], any>>(fn: T) => {
 };
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('once', () => {
+    test('once', () => {
+
+    });
+});
+```

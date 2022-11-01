@@ -10,3 +10,14 @@ import { ResolvePackageOptions } from './resolvePackage';
 export declare function isPackageExists(name: string, options?: ResolvePackageOptions): boolean;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('isPackageExists', () => {
+    test('isPackageExists', () => {
+
+    });
+});
+```

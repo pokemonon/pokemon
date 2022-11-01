@@ -9,3 +9,14 @@
 export declare const getTime: (time: number) => Promise<unknown>;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('getTime', () => {
+    test('getTime', () => {
+
+    });
+});
+```

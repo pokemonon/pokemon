@@ -9,3 +9,14 @@
 export declare const debounce: (fn: any, delay: number) => (this: any, ...args: any[]) => void;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('debounce', () => {
+    test('debounce', () => {
+
+    });
+});
+```

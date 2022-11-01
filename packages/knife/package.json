@@ -25,7 +25,11 @@
     },
     "license": "MIT",
     "sideEffects": false,
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
     "scripts": {
+        "manage": "tsx scripts/manager/index.ts",
         "dev": "npm run build -- --watch",
         "build": "rm -rf dist && packbag rollup",
         "refresh": "ts-node scripts/initEntry.ts",
@@ -36,9 +40,12 @@
         "@packbag/cli": "0.0.1-alpha.3",
         "@packbag/cli-rollup": "0.0.1-alpha.3",
         "@packbag/cli-rollup-plugin-common": "0.0.1-alpha.3",
+        "@pokemonon/temanager": "0.0.2-alpha.0",
+        "@types/inquirer": "^9.0.2",
         "@types/listr": "^0.14.3",
         "better-docs": "^2.3.2",
         "eslint-plugin-tsdoc": "^0.2.11",
+        "inquirer": "^9.1.4",
         "jsdoc": "^3.6.6",
         "jsdoc-plugin-typescript": "^2.0.6",
         "rimraf": "^3.0.2",
@@ -48,6 +55,7 @@
     },
     "dependencies": {
         "chalk": "^4.1.1",
+        "commander": "^9.4.1",
         "execa": "^5.0.0",
         "find-up": "^5.0.0",
         "fs-extra": "^10.0.0",
@@ -56,6 +64,5 @@
     },
     "peerDependencies": {
         "typescript": "~4.7.4"
-    },
-    "gitHead": "f18dd668b20870ecd547f307526adc2e1272b9f1"
+    }
 }

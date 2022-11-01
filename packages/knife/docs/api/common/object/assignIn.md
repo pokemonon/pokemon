@@ -10,3 +10,14 @@ export declare const assignIn: {
 };
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('assignIn', () => {
+    test('assignIn', () => {
+
+    });
+});
+```

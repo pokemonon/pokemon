@@ -13,3 +13,14 @@ export interface ThrottleOptions {
 export declare const throttle: (fn: any, wait: number, { immediate }: ThrottleOptions) => (this: any, ...args: any[]) => void;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('throttle', () => {
+    test('throttle', () => {
+
+    });
+});
+```

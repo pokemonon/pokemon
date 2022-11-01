@@ -19,3 +19,14 @@ export declare const mergeArr: {
 };
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('mergeArr', () => {
+    test('mergeArr', () => {
+
+    });
+});
+```

@@ -23,5 +23,3 @@
 export const prevetBack = () => {
     //
 };
-
-export prevetBack;

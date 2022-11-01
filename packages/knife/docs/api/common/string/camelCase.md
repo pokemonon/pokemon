@@ -27,3 +27,14 @@ export interface CamelCaseOptions {
 export declare function camelCase(input: string, options?: CamelCaseOptions): any;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('camelCase', () => {
+    test('camelCase', () => {
+
+    });
+});
+```

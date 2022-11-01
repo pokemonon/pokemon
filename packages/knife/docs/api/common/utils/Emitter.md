@@ -44,3 +44,14 @@ export declare class Emitter {
 }
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('Emitter', () => {
+    test('Emitter', () => {
+
+    });
+});
+```

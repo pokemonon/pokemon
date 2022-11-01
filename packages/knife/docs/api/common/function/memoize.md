@@ -7,3 +7,14 @@ export declare const memoize: {
 };
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('memoize', () => {
+    test('memoize', () => {
+
+    });
+});
+```

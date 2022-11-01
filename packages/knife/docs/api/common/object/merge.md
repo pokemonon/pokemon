@@ -19,3 +19,14 @@ export declare const merge: {
 };
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('merge', () => {
+    test('merge', () => {
+
+    });
+});
+```

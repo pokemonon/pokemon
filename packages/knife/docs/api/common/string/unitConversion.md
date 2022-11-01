@@ -19,3 +19,14 @@ export declare const unitConversion: (value: string | number, { rate, place, com
 }) => string;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('unitConversion', () => {
+    test('unitConversion', () => {
+
+    });
+});
+```

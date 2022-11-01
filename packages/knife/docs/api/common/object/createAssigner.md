@@ -21,3 +21,14 @@ export declare const createAssigner: <T extends Fn<any[], string[]>>(assigner: A
 export {};
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('createAssigner', () => {
+    test('createAssigner', () => {
+
+    });
+});
+```

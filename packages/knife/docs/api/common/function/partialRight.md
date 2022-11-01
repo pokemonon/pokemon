@@ -12,3 +12,14 @@ export declare const partialRight: PartialRight;
 export {};
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('partialRight', () => {
+    test('partialRight', () => {
+
+    });
+});
+```

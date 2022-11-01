@@ -9,3 +9,14 @@
 export declare const isEmptyObject: (obj: Object) => boolean;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('isEmptyObject', () => {
+    test('isEmptyObject', () => {
+
+    });
+});
+```

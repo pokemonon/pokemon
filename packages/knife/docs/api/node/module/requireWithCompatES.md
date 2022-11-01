@@ -7,3 +7,14 @@
 export declare function requireWithCompatES(mod: any): any;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('requireWithCompatES', () => {
+    test('requireWithCompatES', () => {
+
+    });
+});
+```

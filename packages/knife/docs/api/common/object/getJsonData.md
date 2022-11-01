@@ -9,3 +9,14 @@
 export declare const getJsonData: (val: any, result?: {}) => any;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('getJsonData', () => {
+    test('getJsonData', () => {
+
+    });
+});
+```

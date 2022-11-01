@@ -14,3 +14,14 @@ export interface AddDelimiterOptions {
 export declare const addDelimiter: (value: string | undefined, { step, delimiter, fromRight }: AddDelimiterOptions) => string;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('addDelimiter', () => {
+    test('addDelimiter', () => {
+
+    });
+});
+```

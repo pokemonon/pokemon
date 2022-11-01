@@ -7,3 +7,14 @@
 export declare const jsonClone: <K>(val: K) => K;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('jsonClone', () => {
+    test('jsonClone', () => {
+
+    });
+});
+```

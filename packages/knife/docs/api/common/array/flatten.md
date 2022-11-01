@@ -10,3 +10,14 @@
 export declare const flatten: <T>(arr: T[], depth?: number | true) => T[];
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('flatten', () => {
+    test('flatten', () => {
+
+    });
+});
+```

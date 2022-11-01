@@ -10,3 +10,14 @@ export declare const assign: {
 };
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('assign', () => {
+    test('assign', () => {
+
+    });
+});
+```

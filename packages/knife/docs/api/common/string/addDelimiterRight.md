@@ -11,3 +11,14 @@ import { AddDelimiterOptions } from './addDelimiter';
 export declare const addDelimiterRight: (value: string | undefined, options: Omit<AddDelimiterOptions, 'fromRight'>) => string;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('addDelimiterRight', () => {
+    test('addDelimiterRight', () => {
+
+    });
+});
+```

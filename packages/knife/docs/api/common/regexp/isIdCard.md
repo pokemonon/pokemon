@@ -7,3 +7,14 @@
 export declare const isIdCard: (value: any) => boolean;
 
 ```
+
+## Test
+```ts
+import { describe, test } from 'vitest';
+
+describe('isIdCard', () => {
+    test('isIdCard', () => {
+
+    });
+});
+```
