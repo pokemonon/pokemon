@@ -3,6 +3,6 @@
  * @category Object
  */
 export const isIterable = <T>(o): o is Iterable<T> => {
-    return o && Symbol.iterator in o;
-};
+  return o && Symbol.iterator in o
+}
 

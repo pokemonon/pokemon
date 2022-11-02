@@ -6,17 +6,20 @@
  * @param arr
  * @param size
  */
-export declare const chunk: (arr: any[], size: number) => any[];
+export declare function chunk(arr: any[], size: number): any[];
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { chunk } from '@pokemonon/knife'
+import { describe, expect, test } from 'vitest'
 
 describe('chunk', () => {
-    test('chunk', () => {
-        
-    });
-});
+  test('chunk', () => {
+    expect(() => chunk([1, 2, 3, 4], 0)).toThrowError()
+    expect(chunk([1, 2, 3, 4], 3)).toEqual([[1, 2, 3], [4]])
+  })
+})
+
 ```

@@ -4,7 +4,10 @@
  * @param arr
  * @param size
  */
-export const chunk = (arr: any[], size: number) => {
+export function chunk(arr: any[], size: number) {
+  if (!+size) {
+    throw new Error('size should greater than 0')
+  }
   const result: any[] = []
 
   arr = [...arr]
