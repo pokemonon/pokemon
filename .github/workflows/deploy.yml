@@ -25,12 +25,12 @@ jobs:
         with:
           node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
-            
+
       - name: Set pnpm
         uses: pnpm/action-setup@v2.2.2
         with:
           run_install: false
-      
+
       - name: Get pnpm store directory
         id: pnpm-cache
         shell: bash
@@ -56,5 +56,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .vitepress/dist
-      
-    
+

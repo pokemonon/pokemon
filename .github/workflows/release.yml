@@ -6,8 +6,8 @@ name: release
 on:
   push:
     branches:
-    - main
-    - develop
+      - main
+      - develop
 
 jobs:
   publish-npm:
@@ -28,7 +28,7 @@ jobs:
 
       - name: Install Dependencies
         run: ni
-      
+
       - name: Build
         run: nr build
 
@@ -36,7 +36,7 @@ jobs:
         run: nr release
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-      
+
       - name: Tag
         run: git push --tags
 
