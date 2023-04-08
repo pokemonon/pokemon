@@ -3,14 +3,14 @@
 
 // export export const assign = createAssign(getKeys);
 
-// 
+//
 
 // import each from '../object/each';
-import { createAssigner } from './createAssigner';
-import { assigner } from '../internal/assigner';
-import { getKeys } from './getKeys';
+import { assigner } from '../internal/assigner'
+import { createAssigner } from './createAssigner'
+import { getKeys } from './getKeys'
 
-export const assign = createAssigner(assigner(getKeys));
+export const assign = createAssigner(assigner(getKeys))
 
 // class Person {}
 // // eslint-disable-next-line

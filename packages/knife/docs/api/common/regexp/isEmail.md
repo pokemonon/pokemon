@@ -4,17 +4,17 @@
  * 是否是邮箱
  * @category RegExp
  */
-export declare const isEmail: (value: any) => boolean;
+export declare const isEmail: (value: any) => boolean
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isEmail', () => {
-    test('isEmail', () => {
+  test('isEmail', () => {
 
-    });
-});
+  })
+})
 ```

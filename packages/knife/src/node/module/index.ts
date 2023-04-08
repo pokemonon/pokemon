@@ -1,3 +1,3 @@
 /* auto generate! */
-export * from './requireDefaultWithCompatES';
-export * from './requireWithCompatES';
+export * from './requireDefaultWithCompatES'
+export * from './requireWithCompatES'

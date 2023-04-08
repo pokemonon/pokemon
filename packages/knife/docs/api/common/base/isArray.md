@@ -4,17 +4,17 @@
  * 对象类型判断
  * @category Base
  */
-export declare const isArray: <K = unknown[]>(val: any) => val is K;
+export declare const isArray: <K = unknown[]>(val: any) => val is K
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isArray', () => {
-    test('isArray', () => {
+  test('isArray', () => {
 
-    });
-});
+  })
+})
 ```

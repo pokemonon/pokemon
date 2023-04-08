@@ -4,17 +4,17 @@
  * 非Nullable（undefined null）
  * @category Base
  */
-export declare const isDef: <T>(val: T) => val is NonNullable<T>;
+export declare const isDef: <T>(val: T) => val is NonNullable<T>
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isDef', () => {
-    test('isDef', () => {
+  test('isDef', () => {
 
-    });
-});
+  })
+})
 ```

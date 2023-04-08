@@ -5,15 +5,16 @@
  * @param prop 属性路径
  */
 export const setDeepProp = (data, prop: string, val: any) => {
-    const keys = prop.split('.');
-    const kLen = keys.length;
-    let t = data;
-    keys.forEach((k, i) => {
-        if (i === kLen - 1) {
-            t[k] = val;
-        } else {
-            t = t[k];
-        }
-    });
-};
+  const keys = prop.split('.')
+  const kLen = keys.length
+  let t = data
+  keys.forEach((k, i) => {
+    if (i === kLen - 1) {
+      t[k] = val
+    }
+    else {
+      t = t[k]
+    }
+  })
+}
 

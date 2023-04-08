@@ -5,17 +5,17 @@
   * @param cwd
   * @returns
   */
-export declare function loadPackageJSONSync(cwd?: string): Record<string, any> | null;
+export declare function loadPackageJSONSync(cwd?: string): Record<string, any> | null
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('loadPackageJsonSync', () => {
-    test('loadPackageJsonSync', () => {
+  test('loadPackageJsonSync', () => {
 
-    });
-});
+  })
+})
 ```

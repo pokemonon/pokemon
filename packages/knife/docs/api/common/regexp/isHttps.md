@@ -4,17 +4,17 @@
  * 是否是https的url
  * @category RegExp
  */
-export declare const isHttps: (value: any) => boolean;
+export declare const isHttps: (value: any) => boolean
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isHttps', () => {
-    test('isHttps', () => {
+  test('isHttps', () => {
 
-    });
-});
+  })
+})
 ```

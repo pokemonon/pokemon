@@ -6,17 +6,17 @@
  * @param obj
  * @return {boolean}
  */
-export declare const isEmptyObject: (obj: Object) => boolean;
+export declare const isEmptyObject: (obj: Object) => boolean
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isEmptyObject', () => {
-    test('isEmptyObject', () => {
+  test('isEmptyObject', () => {
 
-    });
-});
+  })
+})
 ```

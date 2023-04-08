@@ -1,2 +1,2 @@
 /* auto generate! */
-export * from './iframeComm';
+export * from './iframeComm'

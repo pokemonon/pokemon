@@ -1,25 +1,23 @@
-import { Fn } from '../../types';
+import type { Fn } from '../../types'
 
 /**
  * 确保函数只执行一次
- * @param {T} fn 
+ * @param {T} fn
  * @returns {ReturnType<T>}
  */
-export const once = (<T extends Fn>(fn: T) => {
-    let result: ReturnType<T>;
-    const returnFn = function(this, ...args) {
-        if (!returnFn.flag) {
-            returnFn.flag = true;
-            // eslint-disable-next-line
+export const once = <T extends Fn>(fn: T) => {
+  let result: ReturnType<T>
+  const returnFn = function (this, ...args) {
+    if (!returnFn.flag) {
+      returnFn.flag = true
+      // eslint-disable-next-line
             result = fn.apply(this, args);
-        }
-        return result;
-    };
-    returnFn.flag = false;
-    return returnFn;
-});
-
-
+    }
+    return result
+  }
+  returnFn.flag = false
+  return returnFn
+}
 
 // function a() {
 //     console.log('exec')

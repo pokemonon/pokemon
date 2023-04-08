@@ -1,6 +1,6 @@
 # addDelimiterRight
 ```ts
-import { AddDelimiterOptions } from './addDelimiter';
+import type { AddDelimiterOptions } from './addDelimiter'
 /**
  * 从右边开始添加分隔符
  * @category String
@@ -8,17 +8,17 @@ import { AddDelimiterOptions } from './addDelimiter';
  * @param options
  * @returns {string}
  */
-export declare const addDelimiterRight: (value: string | undefined, options: Omit<AddDelimiterOptions, 'fromRight'>) => string;
+export declare const addDelimiterRight: (value: string | undefined, options: Omit<AddDelimiterOptions, 'fromRight'>) => string
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('addDelimiterRight', () => {
-    test('addDelimiterRight', () => {
+  test('addDelimiterRight', () => {
 
-    });
-});
+  })
+})
 ```

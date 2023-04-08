@@ -1,2 +1,2 @@
 /* auto generate! */
-export * from './logger';
+export * from './logger'

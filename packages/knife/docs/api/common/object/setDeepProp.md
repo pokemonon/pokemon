@@ -6,17 +6,17 @@
  * @param data 目标对象
  * @param prop 属性路径
  */
-export declare const setDeepProp: (data: any, prop: string, val: any) => void;
+export declare const setDeepProp: (data: any, prop: string, val: any) => void
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('setDeepProp', () => {
-    test('setDeepProp', () => {
+  test('setDeepProp', () => {
 
-    });
-});
+  })
+})
 ```

@@ -8,23 +8,23 @@
  * @param {any} value 目标值
  * @returns {number}
  */
-export declare function findIndexOf(arr: any[], value: any): number;
-export declare function findIndexOf(arr: any[], key: any, value: any): number;
+export declare function findIndexOf(arr: any[], value: any): number
+export declare function findIndexOf(arr: any[], key: any, value: any): number
 
 ```
 
 ## Test
 ```ts
-import { describe, expect, test } from 'vitest';
-import { findIndexOf } from '@pokemonon/knife';
+import { describe, expect, test } from 'vitest'
+import { findIndexOf } from '@pokemonon/knife'
 
 describe('findIndexOf', () => {
-    test('compare value with param of arr', () => {
-        expect(findIndexOf([0, 1, 2, 3], 2)).toBe(2);
-    });
+  test('compare value with param of arr', () => {
+    expect(findIndexOf([0, 1, 2, 3], 2)).toBe(2)
+  })
 
-    test('compare value with key to param of arr', () => {
-        expect(findIndexOf([ { name: 'arron'}, { name: 'alon'}], 'name', 'arron')).toBe(0);
-    });
-});
+  test('compare value with key to param of arr', () => {
+    expect(findIndexOf([{ name: 'arron' }, { name: 'alon' }], 'name', 'arron')).toBe(0)
+  })
+})
 ```

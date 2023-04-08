@@ -6,17 +6,17 @@
  * @param arr
  * @returns {T[]}
  */
-export declare const flattenDeep: <T>(arr: T[]) => T[];
+export declare const flattenDeep: <T>(arr: T[]) => T[]
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('flattenDeep', () => {
-    test('flattenDeep', () => {
+  test('flattenDeep', () => {
 
-    });
-});
+  })
+})
 ```

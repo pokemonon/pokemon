@@ -1,19 +1,19 @@
 # getKeys
 ```ts
 export declare const getKeys: {
-    (o: object): string[];
-    (o: {}): string[];
-};
+  (o: object): string[]
+  (o: {}): string[]
+}
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('getKeys', () => {
-    test('getKeys', () => {
+  test('getKeys', () => {
 
-    });
-});
+  })
+})
 ```

@@ -1,20 +1,20 @@
 # memoize
 ```ts
-import { Fn } from '../../types';
+import type { Fn } from '../../types'
 export declare const memoize: {
-    <T extends Fn<any[], any>>(fn: T, resolver?: (...args: any[]) => any): T;
-    Cache: MapConstructor;
-};
+  <T extends Fn<any[], any>>(fn: T, resolver?: (...args: any[]) => any): T
+  Cache: MapConstructor
+}
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('memoize', () => {
-    test('memoize', () => {
+  test('memoize', () => {
 
-    });
-});
+  })
+})
 ```

@@ -12,21 +12,21 @@
  * @return {String} 值无效或者不存在,则返回
  */
 export declare const unitConversion: (value: string | number, { rate, place, comma, placeholder }?: {
-    rate?: number | undefined;
-    place?: number | undefined;
-    comma?: boolean | undefined;
-    placeholder?: string | undefined;
-}) => string;
+  rate?: number | undefined
+  place?: number | undefined
+  comma?: boolean | undefined
+  placeholder?: string | undefined
+}) => string
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('unitConversion', () => {
-    test('unitConversion', () => {
+  test('unitConversion', () => {
 
-    });
-});
+  })
+})
 ```

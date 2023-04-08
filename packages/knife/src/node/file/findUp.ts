@@ -1,2 +1,2 @@
-export { default as findUp } from 'find-up';
+export { default as findUp } from 'find-up'
 

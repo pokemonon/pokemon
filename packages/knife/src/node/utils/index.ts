@@ -1,2 +1,2 @@
 /* auto generate! */
-export * from './locateCallFile';
+export * from './locateCallFile'

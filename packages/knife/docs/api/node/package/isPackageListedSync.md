@@ -6,17 +6,17 @@
  * @param cwd
  * @returns
  */
-export declare function isPackageListedSync(name: string, cwd?: string): boolean;
+export declare function isPackageListedSync(name: string, cwd?: string): boolean
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isPackageListedSync', () => {
-    test('isPackageListedSync', () => {
+  test('isPackageListedSync', () => {
 
-    });
-});
+  })
+})
 ```

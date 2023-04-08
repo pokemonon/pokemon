@@ -4,17 +4,17 @@
  * 是否为身份证号（中国的）
  * @category RegExp
  */
-export declare const isIdCard: (value: any) => boolean;
+export declare const isIdCard: (value: any) => boolean
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isIdCard', () => {
-    test('isIdCard', () => {
+  test('isIdCard', () => {
 
-    });
-});
+  })
+})
 ```

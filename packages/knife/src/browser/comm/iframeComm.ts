@@ -1,45 +1,45 @@
-import { eventToP } from '../../common/utils/eventToP';
+import { eventToP } from '../../common/utils/eventToP'
 
 interface IframeCommOpts {
-    defaultTarget: any;
-    defaultOrigin: string;
+  defaultTarget: any
+  defaultOrigin: string
 }
 /**
  * 简化iframe间通信api
  * @category Comm
  */
 export const iframeComm = ({
-    defaultTarget,
-    defaultOrigin = '*'
+  defaultTarget,
+  defaultOrigin = '*',
 } = {} as IframeCommOpts) => {
-    return eventToP<MessageEvent>({
-        onAdapter(cb) {
-            const callback = (e) => {
-                const msgData = e.data;
-                const { eventName, data } = msgData;
-                cb(eventName, e, data);
-            };
-            window.addEventListener('message', callback);
-            return () => {
-                window.removeEventListener('message', callback);
-            };
-        },
-        emitAdapter(info) {
-            const { emitTarget, evt = {} as MessageEvent, data, eventName } = info;
-            const target = emitTarget || evt.source || defaultTarget;
-            if (!target) {
-                throw new Error('not exist target');
-            }
-            if (!eventName) {
-                return;
-            }
-            const { origin } = evt;
-            // const allT: Window[] = isArray<Window[]>(target) ? target : [target];
-            // allT.forEach(t => t.postMessage({ eventName, data }, origin || defaultOrigin));
-            target.postMessage({ eventName, data }, origin || defaultOrigin);
-        }
-    });
-};
+  return eventToP<MessageEvent>({
+    onAdapter(cb) {
+      const callback = (e) => {
+        const msgData = e.data
+        const { eventName, data } = msgData
+        cb(eventName, e, data)
+      }
+      window.addEventListener('message', callback)
+      return () => {
+        window.removeEventListener('message', callback)
+      }
+    },
+    emitAdapter(info) {
+      const { emitTarget, evt = {} as MessageEvent, data, eventName } = info
+      const target = emitTarget || evt.source || defaultTarget
+      if (!target) {
+        throw new Error('not exist target')
+      }
+      if (!eventName) {
+        return
+      }
+      const { origin } = evt
+      // const allT: Window[] = isArray<Window[]>(target) ? target : [target];
+      // allT.forEach(t => t.postMessage({ eventName, data }, origin || defaultOrigin));
+      target.postMessage({ eventName, data }, origin || defaultOrigin)
+    },
+  })
+}
 
 /**
  * @examples

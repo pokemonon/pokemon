@@ -6,17 +6,17 @@
  * @param o
  * @returns {boolean}
  */
-export declare const isArrLike: <T>(o: any) => o is ArrayLike<T>;
+export declare const isArrLike: <T>(o: any) => o is ArrayLike<T>
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isArrLike', () => {
-    test('isArrLike', () => {
+  test('isArrLike', () => {
 
-    });
-});
+  })
+})
 ```

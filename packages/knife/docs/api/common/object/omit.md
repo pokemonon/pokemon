@@ -6,17 +6,17 @@
  * @param data
  * @param props
  */
-export declare const omit: <D extends {}, T extends keyof D>(data: D, props: T[]) => Omit<D, T>;
+export declare const omit: <D extends {}, T extends keyof D>(data: D, props: T[]) => Omit<D, T>
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('omit', () => {
-    test('omit', () => {
+  test('omit', () => {
 
-    });
-});
+  })
+})
 ```

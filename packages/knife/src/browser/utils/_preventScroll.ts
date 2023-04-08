@@ -18,8 +18,7 @@
 // };
 // ! touchmove preventDefault
 
-
 // todo
 export const prevetBack = () => {
-    //
-};
+  //
+}

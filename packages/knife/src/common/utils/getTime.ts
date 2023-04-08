@@ -4,5 +4,5 @@
  * @param time
  * @return {Promise<void>}
  */
-export const getTime = (time: number) => new Promise(resolve => setTimeout(resolve, time));
+export const getTime = (time: number) => new Promise(resolve => setTimeout(resolve, time))
 

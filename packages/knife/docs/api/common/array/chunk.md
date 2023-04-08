@@ -6,7 +6,7 @@
  * @param arr
  * @param size
  */
-export declare function chunk(arr: any[], size: number): any[];
+export declare function chunk(arr: any[], size: number): any[]
 
 ```
 

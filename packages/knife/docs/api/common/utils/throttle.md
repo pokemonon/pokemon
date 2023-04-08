@@ -1,7 +1,7 @@
 # throttle
 ```ts
 export interface ThrottleOptions {
-    immediate: boolean;
+  immediate: boolean
 }
 /**
  * 节流
@@ -10,17 +10,17 @@ export interface ThrottleOptions {
  * @param fn
  * @param immediate 是否立即执行
  */
-export declare const throttle: (fn: any, wait: number, { immediate }: ThrottleOptions) => (this: any, ...args: any[]) => void;
+export declare const throttle: (fn: any, wait: number, { immediate }: ThrottleOptions) => (this: any, ...args: any[]) => void
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('throttle', () => {
-    test('throttle', () => {
+  test('throttle', () => {
 
-    });
-});
+  })
+})
 ```

@@ -1,7 +1,7 @@
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('omit', () => {
-    test('omit', () => {
+  test('omit', () => {
 
-    });
-});
+  })
+})

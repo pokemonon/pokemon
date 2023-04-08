@@ -6,17 +6,17 @@
  * @param cwd
  * @returns
  */
-export declare function isPackageListed(name: string, cwd?: string): Promise<boolean>;
+export declare function isPackageListed(name: string, cwd?: string): Promise<boolean>
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isPackageListed', () => {
-    test('isPackageListed', () => {
+  test('isPackageListed', () => {
 
-    });
-});
+  })
+})
 ```

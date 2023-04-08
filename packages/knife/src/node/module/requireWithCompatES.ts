@@ -3,6 +3,6 @@
  * @category Module
  */
 export function requireWithCompatES(mod) {
-    return mod && mod.__esModule ? mod : { __esModule: false, default: mod };
+  return mod && mod.__esModule ? mod : { __esModule: false, default: mod }
 }
 

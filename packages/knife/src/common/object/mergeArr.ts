@@ -1,7 +1,7 @@
-import { createAssigner } from './createAssigner';
-import { baseMerge } from '../internal/baseMerge';
-import { getKeys } from './getKeys';
-import { isArray } from '../base/isArray';
+import { baseMerge } from '../internal/baseMerge'
+import { isArray } from '../base/isArray'
+import { createAssigner } from './createAssigner'
+import { getKeys } from './getKeys'
 
 /**
  * 遍历对象的值, 数组会被合并
@@ -13,12 +13,10 @@ import { isArray } from '../base/isArray';
  * @param customizer
  */
 export const mergeArr = createAssigner(baseMerge(getKeys, (v1, v2) => {
-    if (isArray(v1) && isArray(v2)) {
-        return [...v1, ...v2];
-    }
-}) as any);
-
-
+  if (isArray(v1) && isArray(v2)) {
+    return [...v1, ...v2]
+  }
+}) as any)
 
 // const obj = {
 //     info: {

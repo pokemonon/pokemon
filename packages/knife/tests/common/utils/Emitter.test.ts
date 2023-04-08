@@ -1,7 +1,7 @@
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('Emitter', () => {
-    test('Emitter', () => {
+  test('Emitter', () => {
 
-    });
-});
+  })
+})

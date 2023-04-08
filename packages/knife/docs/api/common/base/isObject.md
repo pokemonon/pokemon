@@ -4,17 +4,17 @@
  * 对象类型判断
  * @category Base
  */
-export declare const isObject: <K = Object>(val: any) => val is K;
+export declare const isObject: <K = Object>(val: any) => val is K
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isObject', () => {
-    test('isObject', () => {
+  test('isObject', () => {
 
-    });
-});
+  })
+})
 ```

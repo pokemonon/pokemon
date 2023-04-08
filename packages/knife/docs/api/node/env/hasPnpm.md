@@ -1,16 +1,16 @@
 # hasPnpm
 ```ts
-export declare const hasPnpm: () => boolean;
+export declare const hasPnpm: () => boolean
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('hasPnpm', () => {
-    test('hasPnpm', () => {
+  test('hasPnpm', () => {
 
-    });
-});
+  })
+})
 ```

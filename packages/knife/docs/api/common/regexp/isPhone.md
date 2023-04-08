@@ -4,17 +4,17 @@
  * 是否是手机号
  * @category RegExp
  */
-export declare const isPhone: (value: any) => boolean;
+export declare const isPhone: (value: any) => boolean
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('isPhone', () => {
-    test('isPhone', () => {
+  test('isPhone', () => {
 
-    });
-});
+  })
+})
 ```

@@ -7,17 +7,17 @@
  * @param target
  * @returns {T}
  */
-export declare const cloneDeep: <T>(target: T) => T;
+export declare const cloneDeep: <T>(target: T) => T
 
 ```
 
 ## Test
 ```ts
-import { describe, test } from 'vitest';
+import { describe, test } from 'vitest'
 
 describe('cloneDeep', () => {
-    test('cloneDeep', () => {
+  test('cloneDeep', () => {
 
-    });
-});
+  })
+})
 ```

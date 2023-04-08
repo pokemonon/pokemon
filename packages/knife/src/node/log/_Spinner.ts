@@ -1,8 +1,8 @@
 /**
  * todo spinner list
  */
-import Listr from 'listr';
-import { SpinnerRenderer } from './_spinner-renderer';
+import Listr from 'listr'
+import { SpinnerRenderer } from './_spinner-renderer'
 // import ListrUpdateRenderer from 'listr-update-renderer';
 
 // type ListrTaskObject<Ctx> = Listr.ListrTaskObject<Ctx>
@@ -31,44 +31,44 @@ import { SpinnerRenderer } from './_spinner-renderer';
 //     }
 // }
 const listr = new Listr({
-    concurrent: true,
-    renderer: SpinnerRenderer as any
-});
+  concurrent: true,
+  renderer: SpinnerRenderer as any,
+})
 
 interface SpinnerOp {
-    resolve: (value?: any) => void;
-    reject: (reason?: any) => void;
+  resolve: (value?: any) => void
+  reject: (reason?: any) => void
 }
 export class Spinner {
-    #op!: SpinnerOp
+  #op!: SpinnerOp
 
-    constructor(text: string) {
-        listr.add({
-            title: text,
-            task: () => {
-                return new Promise((resolve, reject) => {
-                    this.#op = {
-                        resolve,
-                        reject
-                    };
-                });
-            }
-        });
-    }
+  constructor(text: string) {
+    listr.add({
+      title: text,
+      task: () => {
+        return new Promise((resolve, reject) => {
+          this.#op = {
+            resolve,
+            reject,
+          }
+        })
+      },
+    })
+  }
 
-    start() {
-        listr.run().catch(() => {
-            //
-        });
-    }
+  start() {
+    listr.run().catch(() => {
+      //
+    })
+  }
 
-    success() {
-        this.#op.resolve();
-    }
+  success() {
+    this.#op.resolve()
+  }
 
-    fail(reason?: string) {
-        this.#op.reject(new Error(reason));
-    }
+  fail(reason?: string) {
+    this.#op.reject(new Error(reason))
+  }
 }
 
 // const spinner = new Spinner('hello')
