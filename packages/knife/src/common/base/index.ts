@@ -8,3 +8,4 @@ export * from './isObj';
 export * from './isObject';
 export * from './isString';
 export * from './isType';
+export * from './isNumeric';
