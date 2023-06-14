@@ -26,33 +26,34 @@ jobs:
           node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Setup
-        run: npm i -g @antfu/ni pnpm
+      - name: Set pnpm
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install Dependencies
-        run: ni
+        run: pnpm install
 
       - name: Build Docs
-        run: nr docs:build
-        
-      # - name: deploy docs to gh-pages
-      #   run: |
-      #     cd assets
-      #     git init
-      #     git config --local user.name $USER_NAME
-      #     git config --local user.email $USER_EMAIL
-      #     git remote add origin https://$COMMIT_SECRET@github.com/$GITHUB_REPOSITORY.git
-      #     git checkout -b gh-pages
-      #     git add .
-      #     git commit -m "feat: deploy doc"
-      #     git push origin gh-pages -f
-      #     echo 🚀
-
+        run: pnpm run docs:build
 
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .vitepress/dist
-      
-    
+

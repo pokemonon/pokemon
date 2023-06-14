@@ -1,2 +1,2 @@
 /* auto generate! */
-export * from './FN_PLACEHOLDER';
+export * from './FN_PLACEHOLDER'

@@ -5,13 +5,14 @@
  * @param result 默认值
  */
 export const getJsonData = (val, result = {}) => {
-    if (!val) {
-        return result;
-    }
-    try {
-        return JSON.parse(val);
-    } catch (e) {
-        return result;
-    }
-};
+  if (!val) {
+    return result
+  }
+  try {
+    return JSON.parse(val)
+  }
+  catch (e) {
+    return result
+  }
+}
 

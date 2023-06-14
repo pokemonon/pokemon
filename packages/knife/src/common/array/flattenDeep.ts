@@ -1,11 +1,10 @@
-import { flatten } from './flatten';
+import { flatten } from './flatten'
 
 /**
  * 数组全部铺平
  * @category Array
- * @param arr 
- * @returns {T[]} 
+ * @param arr
+ * @returns {T[]}
  */
-export const flattenDeep = <T>(arr: T[]) => flatten(arr, true);
-
+export const flattenDeep = <T>(arr: T[]) => flatten(arr, true)
 

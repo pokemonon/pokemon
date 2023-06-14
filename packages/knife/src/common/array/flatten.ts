@@ -1,4 +1,4 @@
-import { isArray } from '../base/isArray';
+import { isArray } from '../base/isArray'
 
 /**
  * 数组向上展开
@@ -8,21 +8,22 @@ import { isArray } from '../base/isArray';
  * @returns {any[]}
  */
 export const flatten = <T>(arr: T[], depth: number | true = 1) => {
-    let hasArr = true;
-    let result = arr;
-    while (depth === true ? hasArr : depth && hasArr) {
-        depth === true || depth--;
-        // eslint-disable-next-line no-loop-func
-        result = result.reduce((list, i) => {
-            if (isArray(i)) {
-                hasArr = i.some(item => isArray(item));
-                list.push(...i as any);
-            } else {
-                list.push(i);
-            }
-            return list;
-        }, [] as T[]);
-    }
-    return result;
-};
+  let hasArr = true
+  let result = arr
+  while (depth === true ? hasArr : depth && hasArr) {
+    depth === true || depth--
+
+    result = result.reduce((list, i) => {
+      if (isArray(i)) {
+        hasArr = i.some(item => isArray(item))
+        list.push(...i as any)
+      }
+      else {
+        list.push(i)
+      }
+      return list
+    }, [] as T[])
+  }
+  return result
+}
 

@@ -1,6 +1,6 @@
 {
-    "name": "@pokemon/<%= packageName %>",
-    "version": "1.0.0",
-    "main": "dist/index.js",
-    "license": "MIT"
+  "name": "@pokemon/<%= packageName %>",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.js"
 }

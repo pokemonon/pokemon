@@ -1,2 +1,2 @@
-export const getKeys = Object.keys;
+export const getKeys = Object.keys
 

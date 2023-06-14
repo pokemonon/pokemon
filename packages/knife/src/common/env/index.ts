@@ -1,2 +1,2 @@
 /* auto generate! */
-export * from './inBrowser';
+export * from './inBrowser'

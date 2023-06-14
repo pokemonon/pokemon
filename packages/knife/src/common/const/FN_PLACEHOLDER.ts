@@ -4,11 +4,11 @@
 //     [FN_PLACEHOLDER_SYMBOL]: FN_PLACEHOLDER_SYMBOL
 // }
 // type FN_PLACEHOLDER = typeof Fn_Placeholder
-const FN_PLACEHOLDER_ID = 'FN_PLACEHOLDER_ID';
+const FN_PLACEHOLDER_ID = 'FN_PLACEHOLDER_ID'
 
 export class FN_PLACEHOLDER {
-    id = 'FN_PLACEHOLDER_ID'
+  id = 'FN_PLACEHOLDER_ID'
 }
 
-export const isFnPlaceholder = ins => ins.id == FN_PLACEHOLDER_ID;
+export const isFnPlaceholder = ins => ins.id == FN_PLACEHOLDER_ID
 

@@ -1,5 +1,5 @@
-import execa from 'execa';
-import { memoize } from '../../common/function/memoize';
+import execa from 'execa'
+import { memoize } from '../../common/function/memoize'
 
 // let _hasYarn: boolean | null;
 
@@ -8,7 +8,7 @@ import { memoize } from '../../common/function/memoize';
 //         return _hasYarn;
 //     }
 //     try {
-//         execa.sync('yarn', ['--version'], { stdio: 'ignore' }); 
+//         execa.sync('yarn', ['--version'], { stdio: 'ignore' });
 //         return (_hasYarn = true);
 //     } catch (e) {
 //         return (_hasYarn = false);
@@ -16,11 +16,12 @@ import { memoize } from '../../common/function/memoize';
 // };
 
 export const hasYarn = memoize(() => {
-    try {
-        execa.sync('yarn', ['--version'], { stdio: 'ignore' });
-        return true;
-    } catch (e) {
-        return false;
-    }
-});
+  try {
+    execa.sync('yarn', ['--version'], { stdio: 'ignore' })
+    return true
+  }
+  catch (e) {
+    return false
+  }
+})
 

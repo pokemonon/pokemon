@@ -1,0 +1,387 @@
+[
+  {
+    "type": "common",
+    "list": [
+      {
+        "type": "array",
+        "list": [
+          {
+            "name": "findIndexOf"
+          },
+          {
+            "name": "chunk"
+          },
+          {
+            "name": "filter"
+          },
+          {
+            "name": "flatten"
+          },
+          {
+            "name": "flattenDeep"
+          },
+          {
+            "name": "isArrLike"
+          },
+          {
+            "name": "keyBy"
+          },
+          {
+            "name": "sureArray"
+          }
+        ]
+      },
+      {
+        "type": "base",
+        "list": [
+          {
+            "name": "isArray"
+          },
+          {
+            "name": "isBoolean"
+          },
+          {
+            "name": "isDef"
+          },
+          {
+            "name": "isFunction"
+          },
+          {
+            "name": "isNumber"
+          },
+          {
+            "name": "isObj"
+          },
+          {
+            "name": "isObject"
+          },
+          {
+            "name": "isString"
+          },
+          {
+            "name": "isType"
+          },
+          {
+            "name": "isNumeric"
+          }
+        ]
+      },
+      {
+        "type": "const",
+        "list": [
+          {
+            "name": "FN_PLACEHOLDER"
+          }
+        ]
+      },
+      {
+        "type": "env",
+        "list": [
+          {
+            "name": "inBrowser"
+          }
+        ]
+      },
+      {
+        "type": "function",
+        "list": [
+          {
+            "name": "curry"
+          },
+          {
+            "name": "curryRight"
+          },
+          {
+            "name": "memoize"
+          },
+          {
+            "name": "noop"
+          },
+          {
+            "name": "once"
+          },
+          {
+            "name": "partial"
+          },
+          {
+            "name": "partialRight"
+          }
+        ]
+      },
+      {
+        "type": "internal",
+        "list": [
+          {
+            "name": "assigner"
+          },
+          {
+            "name": "baseMerge"
+          }
+        ]
+      },
+      {
+        "type": "object",
+        "list": [
+          {
+            "name": "assign"
+          },
+          {
+            "name": "assignIn"
+          },
+          {
+            "name": "cloneDeep"
+          },
+          {
+            "name": "createAssign"
+          },
+          {
+            "name": "createAssigner"
+          },
+          {
+            "name": "each"
+          },
+          {
+            "name": "getAllKeys"
+          },
+          {
+            "name": "getDeepProp"
+          },
+          {
+            "name": "getJsonData"
+          },
+          {
+            "name": "getKeys"
+          },
+          {
+            "name": "ifJsonEqual"
+          },
+          {
+            "name": "isEmptyObject"
+          },
+          {
+            "name": "isIterable"
+          },
+          {
+            "name": "jsonClone"
+          },
+          {
+            "name": "merge"
+          },
+          {
+            "name": "mergeArr"
+          },
+          {
+            "name": "omit"
+          },
+          {
+            "name": "omitBy"
+          },
+          {
+            "name": "pick"
+          },
+          {
+            "name": "pickBy"
+          },
+          {
+            "name": "setDeepProp"
+          }
+        ]
+      },
+      {
+        "type": "regexp",
+        "list": [
+          {
+            "name": "isEmail"
+          },
+          {
+            "name": "isHttps"
+          },
+          {
+            "name": "isIdCard"
+          },
+          {
+            "name": "isPhone"
+          }
+        ]
+      },
+      {
+        "type": "string",
+        "list": [
+          {
+            "name": "addDelimiter"
+          },
+          {
+            "name": "addDelimiterRight"
+          },
+          {
+            "name": "camelCase"
+          },
+          {
+            "name": "unitConversion"
+          }
+        ]
+      },
+      {
+        "type": "utils",
+        "list": [
+          {
+            "name": "Emitter"
+          },
+          {
+            "name": "debounce"
+          },
+          {
+            "name": "eventToP"
+          },
+          {
+            "name": "getTime"
+          },
+          {
+            "name": "throttle"
+          }
+        ]
+      },
+      {
+        "type": "dom",
+        "list": [
+          {
+            "name": "createBEM"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "browser",
+    "list": [
+      {
+        "type": "comm",
+        "list": [
+          {
+            "name": "iframeComm"
+          }
+        ]
+      },
+      {
+        "type": "log",
+        "list": [
+          {
+            "name": "logger"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "node",
+    "list": [
+      {
+        "type": "env",
+        "list": [
+          {
+            "name": "hasGit"
+          },
+          {
+            "name": "hasNpm"
+          },
+          {
+            "name": "hasPnpm"
+          },
+          {
+            "name": "hasProjectGit"
+          },
+          {
+            "name": "hasProjectNpm"
+          },
+          {
+            "name": "hasProjectPnpm"
+          },
+          {
+            "name": "hasProjectYarn"
+          },
+          {
+            "name": "hasYarn"
+          }
+        ]
+      },
+      {
+        "type": "file",
+        "list": [
+          {
+            "name": "findUp"
+          },
+          {
+            "name": "writeFile"
+          },
+          {
+            "name": "writeFiles"
+          }
+        ]
+      },
+      {
+        "type": "log",
+        "list": [
+          {
+            "name": "logger"
+          }
+        ]
+      },
+      {
+        "type": "module",
+        "list": [
+          {
+            "name": "requireDefaultWithCompatES"
+          },
+          {
+            "name": "requireWithCompatES"
+          }
+        ]
+      },
+      {
+        "type": "npm",
+        "list": [
+          {
+            "name": "PackageManager"
+          }
+        ]
+      },
+      {
+        "type": "package",
+        "list": [
+          {
+            "name": "getPackageInfo"
+          },
+          {
+            "name": "getPackageInfoSync"
+          },
+          {
+            "name": "isPackageExists"
+          },
+          {
+            "name": "isPackageListed"
+          },
+          {
+            "name": "isPackageListedSync"
+          },
+          {
+            "name": "loadPackageJson"
+          },
+          {
+            "name": "loadPackageJsonSync"
+          },
+          {
+            "name": "resolvePackage"
+          }
+        ]
+      },
+      {
+        "type": "utils",
+        "list": [
+          {
+            "name": "locateCallFile"
+          }
+        ]
+      }
+    ]
+  }
+]

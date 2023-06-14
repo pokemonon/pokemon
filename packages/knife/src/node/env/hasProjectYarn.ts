@@ -1,6 +1,6 @@
-import * as path from 'path';
-import fs from 'fs-extra';
-import { memoize } from '../../common/function/memoize';
+import * as path from 'path'
+import fs from 'fs-extra'
+import { memoize } from '../../common/function/memoize'
 
 // let _hasProjectYarn: boolean | null;
 
@@ -14,7 +14,7 @@ import { memoize } from '../../common/function/memoize';
 // };
 
 export const hasProjectYarn = memoize((cwd: string) => {
-    const lockFile = path.resolve(cwd, 'yarn.lock');
-    return fs.existsSync(lockFile);
-});
+  const lockFile = path.resolve(cwd, 'yarn.lock')
+  return fs.existsSync(lockFile)
+})
 
