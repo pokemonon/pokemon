@@ -5,6 +5,7 @@
     "@pokemonon/knife": "1.1.0"
   },
   "changesets": [
+    "eight-moose-remain",
     "odd-cats-drum",
     "old-tips-sing",
     "spotty-ducks-remain"

@@ -1,5 +1,11 @@
 # @pokemonon/knife
 
+## 1.2.0-beta.3
+
+### Patch Changes
+
+- add createBEM
+
 ## 1.2.0-beta.2
 
 ### Patch Changes
